@@ -59,6 +59,7 @@ body {
     display: flex;
     text-align: center;
     justify-content: center;
+    margin: 10px;
 }
 .header-drop{
     display:flex;
@@ -112,4 +113,5 @@ body {
 
 .dropdown-menu ul .menu-list a:hover {
     background-color: #ddd;
+    border-radius: 10px;
 }
