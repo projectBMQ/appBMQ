@@ -1,21 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu com Dropdown</title>
+    <!-- Link para a biblioteca Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="assets/style.css">
-    <title>Cadastro</title>
 </head>
+
 <body>
-<header>
+    <nav class="navbar">
+        <button class="menu-toggle" id="menuToggle">
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <img src="imgs/logo.png" alt="Logo" class="logo">
+        <div class="menu-icons">
+            <ion-icon name="search"></ion-icon>
+            <ion-icon name="person"></ion-icon>
+        </div>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <ul>
+            <div class="header-drop">
+                <img src="imgs/exemplo-perfil.webp" alt="" class="img-perfil">
+            </div>
+                <span id="span-nome">Nome sobrenome</span>
+                <li class="menu-list"><a href="index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
+                <li class="menu-list"><a href="questionario.html"><ion-icon name="newspaper-sharp"></ion-icon>Questionario</a></li>
+                <li class="menu-list"><a href="assinaturas.html"><ion-icon name="star-sharp"></ion-icon>Minhas assinaturas</a></li>
+                <li class="menu-list"><a href="#"><ion-icon name="happy-sharp"></ion-icon>Meu humor</a></li>
+                <li class="menu-list"><a href="indicacoes.html"><ion-icon name="flame"></ion-icon>Indicações</a></li>
+                <li class="menu-list"><a href="configuracoes.html"><ion-icon name="cog"></ion-icon>Configurações</a></li>
+                <li class="menu-list"><a href="termos.html"><ion-icon name="lock-closed"></ion-icon>Termos de privacidade</a></li>
+                <li class="menu-list"><a href="#"><ion-icon name="exit-outline"></ion-icon>Sair</a></li>
+            </ul>
+        </div>
+    </nav>
 
-</header>
-<main>
-
-</main>
-<footer>
-    
-</footer>
     <script src="assets/script.js"></script>
+     <!-- Link para a biblioteca de ICONS-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
