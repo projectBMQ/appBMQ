@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+/* Logo Bem-me-Quer Questionário */
+#logo-quiz{
+    width: 100%;
+    text-align: center;
+}
+#logo-quiz img{
+    max-width: 200px;
+}
+
+/* Main Questionário */
+.conteudo-questionario{
+    font-family: 'Poppins', sans-serif;
+    /* width: 100%; */
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Questionário */
+
+.questionario{
+    width: 100%;
+    max-width: 350px;
+    background: transparent;
+    /* padding: 0 10px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#respostas{
+    display: grid;
+    gap: 10px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    width: 100%;
+    justify-content: center;
+    /* color: #fff; */
+}
+
+.alternativas{
+    background-color: #ADC172;
+    width: 100%;
+    /* min-width: 300px; */
+    padding: 5px 0;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.alternativas{
+    background-color: #4C6410;
+    color: white;
+}
+
+#btn-questionario{
+    margin: 20px 0;
+    padding: 10px 30px;
+    background-color: #4C6410;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 700;
+    border: none;
+    box-shadow: 1px 2px 5px #ADC172;
+}
