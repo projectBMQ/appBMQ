@@ -32,6 +32,12 @@ body {
 .navbar ion-icon{
     font-size: 30px;
 }
+.logo{
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .menu-icons {
     display: flex;
     gap: 20px;
