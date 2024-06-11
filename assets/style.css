@@ -115,7 +115,7 @@ body {
     align-items: center;
 }
 .login-img img{
-    width: 360px;
+    width: 300px;
 }
 .bem-vindo{
     text-align: center;
@@ -140,7 +140,7 @@ body {
     max-width: 400px;
 }
 
-.input-group {
+.input-group-login  {
     display: flex;
     align-items: center;
     background-color: #e0e0d1;
@@ -149,7 +149,7 @@ body {
     margin-bottom: 15px;
 }
 
-.input-group ion-icon {
+.input-group-login ion-icon {
     font-size: 20px;
     margin-right: 10px;
     color: #666;
@@ -264,11 +264,12 @@ form h2 {
     font-size: 14px;
     color: #333;
     text-align: center;
+    width: 100%;
 }
 
 .input-pair input {
-    width: 48%; /* Divide a largura entre os dois inputs no grupo */
-    margin-bottom: 0; /* Remove a margem inferior para inputs lado a lado */
+    width: 48%; 
+    margin-bottom: 0; 
 }
 
 .input-group input:focus, .input-pair input:focus {
@@ -276,6 +277,7 @@ form h2 {
 }
 .senha-grupo{
     background-color: #ADC172;
+    border-radius: 20px;
 }
 #senha{
     background-color: #ADC172;
@@ -329,10 +331,10 @@ form h2 {
     margin-left: 20px;
     /* margin-right: 20px; */
     /* flex-grow: 1; */
-  
+}
  /* Container Questionário */
 
-.questionario{
+ .questionario{
     width: 100%;
     max-width: 350px;
     background: transparent;
