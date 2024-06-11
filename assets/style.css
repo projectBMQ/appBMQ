@@ -22,33 +22,25 @@ body {
     position: relative;
 }
 
-/* Menu lateral */
 .menu-toggle {
     background: none;
     border: none;
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-
+.navbar ion-icon{
+    font-size: 30px;
+}
 .menu-icons {
     display: flex;
-    gap: 10px;
-    font-size: 25px;
-}
-
-.menu-toggle, .menu-icons, .logo{
-    width: 60px;
+    gap: 20px;
 }
 
 /* Estilo do dropdown MENU*/
 .img-perfil{
-    width: 90px;
+    width: 100px;
     height: 90px;
-    object-fit: cover;
     border-radius: 50%;
 }
 #span-nome{
@@ -60,18 +52,15 @@ body {
     justify-content: center;
     margin: 10px;
 }
-
 .header-drop{
     display:flex;
     align-items: center;
     justify-content: center;
     margin-top: 0px;
 }
-
 .dropdown-menu ion-icon{
     font-size: 22px;
 }
-
 .dropdown-menu {
     position: fixed;
     top: 0;
@@ -88,7 +77,6 @@ body {
     transition: left 0.5s;
     display: flex;
     z-index: 9999;
-    padding-top: 40px;
 }
 
 .dropdown-menu ul {
@@ -127,7 +115,7 @@ body {
     align-items: center;
 }
 .login-img img{
-    width: 360px;
+    width: 300px;
 }
 .bem-vindo{
     text-align: center;
@@ -152,7 +140,7 @@ body {
     max-width: 400px;
 }
 
-.input-group {
+.input-group-login  {
     display: flex;
     align-items: center;
     background-color: #e0e0d1;
@@ -161,7 +149,7 @@ body {
     margin-bottom: 15px;
 }
 
-.input-group ion-icon {
+.input-group-login ion-icon {
     font-size: 20px;
     margin-right: 10px;
     color: #666;
@@ -276,11 +264,12 @@ form h2 {
     font-size: 14px;
     color: #333;
     text-align: center;
+    width: 100%;
 }
 
 .input-pair input {
-    width: 48%; /* Divide a largura entre os dois inputs no grupo */
-    margin-bottom: 0; /* Remove a margem inferior para inputs lado a lado */
+    width: 48%; 
+    margin-bottom: 0; 
 }
 
 .input-group input:focus, .input-pair input:focus {
@@ -288,6 +277,7 @@ form h2 {
 }
 .senha-grupo{
     background-color: #ADC172;
+    border-radius: 20px;
 }
 #senha{
     background-color: #ADC172;
@@ -330,27 +320,21 @@ form h2 {
 #logo-quiz{
     width: 100%;
     text-align: center;
-    margin: 0;
-    display: flex;
-    justify-content: center;
 }
 #logo-quiz img{
-    max-width: 120px;
+    max-width: 200px;
 }
 
-/* Main Questionário */
-.conteudo-questionario{
-    font-family: 'Poppins', sans-serif ;
-    /* width: 100%; */
-    padding: 0 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.logo {
+    height: 64px;
+    width: 80px;
+    margin-left: 20px;
+    /* margin-right: 20px; */
+    /* flex-grow: 1; */
 }
+ /* Container Questionário */
 
-/* Container Questionário */
-
-.questionario{
+ .questionario{
     width: 100%;
     max-width: 350px;
     background: transparent;
@@ -361,17 +345,42 @@ form h2 {
     align-items: center;
     
 }
+  
+  /* Main Questionário */
+.conteudo-questionario{
+    font-family: 'Poppins', sans-serif;
+    /* width: 100%; */
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #respostas{
     display: grid;
-    gap: 15px;
+    gap: 10px;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
     width: 100%;
     justify-content: center;
+    /* color: #fff; */
 }
 
-.avancarQuestionario{
+.alternativas{
+    background-color: #ADC172;
+    width: 100%;
+    /* min-width: 300px; */
+    padding: 5px 0;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.alternativas{
+    background-color: #4C6410;
+    color: white;
+}
+
+#btn-questionario{
     margin: 20px 0;
     padding: 10px 30px;
     background-color: #4C6410;
@@ -380,41 +389,5 @@ form h2 {
     font-weight: 700;
     border: none;
     box-shadow: 1px 2px 5px #ADC172;
-    cursor: pointer;
 }
 
-#pergunta{
-    margin: 20px 0;
-}
-
-.alternativas{
-    cursor: pointer;
-    width: 100%;
-}
-
-.alternativas input[type="checkbox"]{
-    display: none;
-}
-
-.alternativas span{
-    border-radius: 20px;
-    background-color: #ADC172;
-    text-indent: 10px;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.alternativas input[type="checkbox"]:checked ~ span{
-    background-color: #1B3700;
-    border-color: #1B3700;
-    color: #fff;
-    transition: .5s;
-}
-
-@media screen and (min-width:500px) {
-    *{
-        display: none;
-    }
-}
