@@ -1,3 +1,5 @@
+
+// Menu 
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menuToggle');
     const dropdownMenu = document.getElementById('dropdownMenu');
@@ -16,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
 // Validação de cadastro dos usuarios 
 document.getElementById('cadastroForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -60,12 +63,17 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
     }, 3000);
 });
 
+// Validação de formato de e-mail
 function validateEmail(email) {
+    // Expressão regular para validar um e-mail
+    // ReGex = Regular Expression
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
 }
 
-function validatePhoneNumber(phone) {
+// Validação de número de telefone
+function validatePhoneNumber(phone) { 
+    // Número de telefone com 10 ou 11 dígitos
     const re = /^\d{10,11}$/;
     return re.test(phone);
 }
