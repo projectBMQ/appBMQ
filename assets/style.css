@@ -320,21 +320,27 @@ form h2 {
 #logo-quiz{
     width: 100%;
     text-align: center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 #logo-quiz img{
-    max-width: 200px;
+    max-width: 120px;
 }
 
-.logo {
-    height: 64px;
-    width: 80px;
-    margin-left: 20px;
-    /* margin-right: 20px; */
-    /* flex-grow: 1; */
+/* Main Questionário */
+.conteudo-questionario{
+    font-family: 'Poppins', sans-serif ;
+    /* width: 100%; */
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
- /* Container Questionário */
 
- .questionario{
+/* Container Questionário */
+
+.questionario{
     width: 100%;
     max-width: 350px;
     background: transparent;
@@ -345,42 +351,17 @@ form h2 {
     align-items: center;
     
 }
-  
-  /* Main Questionário */
-.conteudo-questionario{
-    font-family: 'Poppins', sans-serif;
-    /* width: 100%; */
-    padding: 0 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 #respostas{
     display: grid;
-    gap: 10px;
+    gap: 15px;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
     width: 100%;
     justify-content: center;
-    /* color: #fff; */
 }
 
-.alternativas{
-    background-color: #ADC172;
-    width: 100%;
-    /* min-width: 300px; */
-    padding: 5px 0;
-    text-align: center;
-    border-radius: 20px;
-}
-
-.alternativas{
-    background-color: #4C6410;
-    color: white;
-}
-
-#btn-questionario{
+.avancarQuestionario{
     margin: 20px 0;
     padding: 10px 30px;
     background-color: #4C6410;
@@ -389,5 +370,41 @@ form h2 {
     font-weight: 700;
     border: none;
     box-shadow: 1px 2px 5px #ADC172;
+    cursor: pointer;
 }
 
+#pergunta{
+    margin: 20px 0;
+}
+
+.alternativas{
+    cursor: pointer;
+    width: 100%;
+}
+
+.alternativas input[type="checkbox"]{
+    display: none;
+}
+
+.alternativas span{
+    border-radius: 20px;
+    background-color: #ADC172;
+    text-indent: 10px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alternativas input[type="checkbox"]:checked ~ span{
+    background-color: #1B3700;
+    border-color: #1B3700;
+    color: #fff;
+    transition: .5s;
+}
+
+@media screen and (min-width:500px) {
+    *{
+        display: none;
+    }
+}
