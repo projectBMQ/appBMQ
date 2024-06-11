@@ -40,26 +40,35 @@
             </div>
         </nav>
     </header>
+
 <main class="conteudo-questionario">
+
     <div class="questionario">
+
         <h1 id="logo-quiz"><img src="assets/img/logo.png" alt=""></h1>
+
         <h3 id="pergunta">Escolha seu tratamento:</h3>
-        <div id="respostas">      
+        
+        <form id="respostas">      
             <label class="alternativas">
-                <input type="checkbox" value="1">
+                <input type="checkbox" name="tratamento" value="Aromaterapia">
                 <span>Aromaterapia</span>
             </label>
             <label class="alternativas">
-                <input type="checkbox" value="2">
+                <input type="checkbox" name="tratamento" value="Cuidados Pessoais">
                 <span>Cuidados Pessoais</span>
             </label>
             <label class="alternativas">
-                <input type="checkbox" value="3">
+                <input type="checkbox" name="tratamento" value="Saúde Mental">
                 <span>Saúde Mental</span>
             </label>
-        </div>
-        <button id="btn-questionario" class="avancarQuestionario">COMEÇAR</button>
+        </form>
+
+        <button id="comecarQuiz" class="avancarQuestionario">COMEÇAR</button>
+        <button id="seguirQuiz" style="display: none;" class="avancarQuestionario" >Próxima</button>
+
     </div>
+
 </main>
 <footer>
     
