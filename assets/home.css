@@ -1,0 +1,165 @@
+p {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+  }
+  img {
+    width: 100%;
+  }
+  #first-image {
+  }
+  #container1 {
+    background-color: #adc172;
+    padding-left: 14px;
+    padding-top: 7px;
+    padding-right: 14px;
+    padding-bottom: 3px;
+  }
+  #container1 p {
+    margin: 0;
+  }
+  #p1 {
+    font-size: larger;
+    color: #1b3700;
+  }
+  #p2 {
+    padding-top: 9px;
+    opacity: 76%;
+  }
+  #container1 button {
+    width: 151px;
+    height: 35px;
+    margin-top: 12px;
+    border: 1px solid #4c6410;
+    border-radius: 15px;
+    background-color: #4c6410;
+    color: white;
+    cursor: pointer;
+  }
+  #botao1 {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 4px;
+  }
+  #descrição {
+    background-color: white;
+    text-align: center;
+    padding: 17px;
+    color: #223512;
+  }
+  #descrição p {
+    margin: 0;
+  }
+  #container-card {
+    background-color: #e5e6d9;
+    height: 515px;
+  }
+  #descrição-card1 {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5%;
+    margin-left: 3%;
+  }
+  #cards1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  #cards1 img {
+    height: 148px;
+    width: 111px;
+    border: 10px solid white;
+    border-radius: 19px;
+    margin-right: 2%;
+    margin-left: 2%;
+    border-bottom: 27px solid white;
+  }
+  #descrição-card2 {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5%;
+    margin-left: 3%;
+    margin-top: 25px;
+  }
+  #cards2 {
+    display: flex;
+    justify-content: space-between;
+  }
+  #cards2 img {
+    height: 148px;
+    width: 111px;
+    border: 10px solid white;
+    border-radius: 19px;
+    margin-right: 2%;
+    margin-left: 2%;
+    border-bottom: 27px solid white;
+  }
+  #p3,#p4{
+    font-weight: 500;
+    cursor: pointer;
+  }
+  #p5,
+  #p6,
+  #p7 {
+    text-align: center;
+  }
+  footer{
+    margin-left: 18%;
+  }
+  #link-psicólogos,
+  #link-artigos {
+    background-color: #4c6410;
+    color: white;
+    text-align: center;
+    width: 80%;
+    min-width: 100px;
+    max-width: 385px;
+    border-radius: 23px;
+    font-size: 14px;
+    padding: 1px;
+    cursor: pointer;
+    margin-bottom: 32px;
+  }
+
+  @media screen and (max-width:560px) {
+    #cards1 img{
+      height: 108px;
+      width: 85px;
+    }
+    #cards2 img{
+      height: 108px;
+      width: 85px;
+    }
+    #container-card{
+      height: 437px;
+    }
+  }
+  @media screen and (max-width:464px) {
+    #cards1 img{       
+      height: 93px;
+      width: 70px;
+    }
+    #cards2 img{
+      height: 93px;
+      width: 70px;
+    }
+    #descrição-card2 p, #descrição-card1 p{
+      font-size: small;
+    }
+    #container-card{
+      height: 399px;
+    }
+  }
+  @media screen and (max-width:400px) {
+    #cards1 img{       
+      height: 68px;
+      width: 70px;
+    }
+    #cards2 img{
+      height: 68px;
+      width: 70px;
+    }
+    #container-card{
+      height: 347px;
+    }
+  }

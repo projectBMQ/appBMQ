@@ -1,21 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-</head>
-<body>
-<header>
-
-</header>
-<main>
-
-</main>
-<footer>
     
-</footer>
-    <script src="assets/script.js"></script>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/home.css">
+  </head>
+  <body>
+
+    <header>
+        <nav class="navbar">
+            <button class="menu-toggle" id="menuToggle">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+            <img src="imgs/logo.png" alt="Logo" class="logo">
+            <div class="menu-icons">
+                <ion-icon name="search"></ion-icon>
+                <ion-icon name="person"></ion-icon>
+            </div>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <ul>
+                    <div class="header-drop">
+                        <img src="imgs/exemplo-perfil.webp" alt="" class="img-perfil">
+                    </div>
+                    <span id="span-nome">Nome sobrenome</span>
+                    <li class="menu-list"><a href="index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
+                    <li class="menu-list"><a href="questionario.html"><ion-icon
+                                name="newspaper-sharp"></ion-icon>Questionario</a></li>
+                    <li class="menu-list"><a href="assinaturas.html"><ion-icon name="star-sharp"></ion-icon>Minhas
+                            assinaturas</a></li>
+                    <li class="menu-list"><a href="#"><ion-icon name="happy-sharp"></ion-icon>Meu humor</a></li>
+                    <li class="menu-list"><a href="indicacoes.html"><ion-icon name="flame"></ion-icon>Indicações</a></li>
+                    <li class="menu-list"><a href="configuracoes.html"><ion-icon name="cog"></ion-icon>Configurações</a>
+                    </li>
+                    <li class="menu-list"><a href="termos.html"><ion-icon name="lock-closed"></ion-icon>Termos de
+                            privacidade</a></li>
+                    <li class="menu-list"><a href="#"><ion-icon name="exit-outline"></ion-icon>Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+      <img id="first-image" src="assets/img/imagem9.jpeg" alt="" />
+      <div id="container1">
+        <p id="p1">
+          Descubra o poder do cuidado e bem-estar sustentável com a BEM-ME-QUER
+          sua jornada para uma vida mais saudável e bonita começa aqui!
+        </p>
+        <p id="p2">
+          Monte seu KIT personalizado através do nosso quiz interativo:
+        </p>
+        <div id="botao1">
+          <button>COMEÇAR</button>
+        </div>
+      </div>
+      <div id="descrição">
+        <p>CONHEÇA OS NOSSOS PRODUTOS:</p>
+      </div>
+      <div id="container-card">
+        <div id="descrição-card1">
+          <p>AROMATERAPIA</p>
+          <p id="p3">Ver mais..</p>
+        </div>
+        <!--Card parte 1-->
+        <div id="cards1">
+          <img src="/assets/img/imagem3.jpeg" />
+          <img src="assets/img/imagem5.jpeg" />
+          <img src="assets/img/imagem5.jpeg" />
+          <img src="assets/img/imagem2.jpeg" />
+        </div>
+        <div id="descrição-card2">
+          <p>CUIDADOS PESSOAIS E SAÚDE MENTAL</p>
+          <p id="p4">Ver mais..</p>
+        </div>
+        <!--Card parte 2-->
+        <div id="cards2">
+          <img src="/assets/img/imagem12.jpeg" />
+          <img src="assets/img/imagem6.jpeg" />
+          <img src="assets/img/imagem7.jpeg" />
+          <img src="assets/img/imagem8.jpeg" />
+        </div>
+      </div>
+      <p id="p5">SAIBA MAIS</p>
+      <p>AROMATERAPIA</p>
+      <img src="assets/img/imagem1.jpeg" />
+      <p>CUIDADOS PESSOAIS</p>
+      <img src="assets/img/imagem10.jpeg" />
+      <p>SAÚDE MENTAL</p>
+      <img src="assets/img/imagem11.jpeg" />
+      <p id="p6">A Bem-me-Quer indica:</p>
+      <p id="p7">
+        A Bem-me-Quer te ajuda a localizar profissionais com o melhor custo
+        benefício ou gratuitos. Veja aqui as melhores opções para você e
+        acompanhe os nossos artigos com dicas de cuidados especiais!
+      </p>
+    </main>
+
+    <footer>
+      <div id="link-psicólogos">
+        <p>PSICÓLOGOS | TERAPEUTAS - Próximos á você.</p>
+      </div>
+      <div id="link-artigos">
+        <p>ARTIGOS - Transforme sua rotina!</p>
+      </div>
+    </footer>
+
+    <script src="assets/script.js" type="module"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  </body>
 </html>
