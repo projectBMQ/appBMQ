@@ -413,7 +413,7 @@ form h2 {
     transition: .5s;
 }
 
-@media screen and (min-width:500px) {
+@media screen and (min-width:560px) {
     *{
         display: none;
     }
