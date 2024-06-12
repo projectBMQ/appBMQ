@@ -26,27 +26,33 @@ body {
     background: none;
     border: none;
     color: white;
-    font-size: 24px;
+    /* font-size: 25px; */
     cursor: pointer;
 }
 .navbar ion-icon{
     font-size: 30px;
 }
-.logo{
+/* .logo{
     width: 90px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 .menu-icons {
     display: flex;
-    gap: 20px;
+    gap: 15px;
+    font-size: 25px;
+}
+
+.menu-toggle, .menu-icons, .logo{
+    width: 60px;
 }
 
 /* Estilo do dropdown MENU*/
 .img-perfil{
     width: 100px;
-    height: 90px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 50%;
 }
 #span-nome{
@@ -70,6 +76,7 @@ body {
 .dropdown-menu {
     position: fixed;
     top: 0;
+    padding-top: 30px;
     left: -100%;
     flex-direction: column;
     justify-content: center;
@@ -409,7 +416,7 @@ form h2 {
     transition: .5s;
 }
 
-@media screen and (min-width:500px) {
+@media screen and (min-width:560px) {
     *{
         display: none;
     }
