@@ -10,7 +10,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <link rel="stylesheet" href="assets/style.css">
-    <title>Login-cadastro</title>
+    <title>Login</title>
 </head>
 <header>
     <nav class="navbar">
@@ -19,8 +19,8 @@
         </button>
         <img src="imgs/logo.png" alt="Logo" class="logo">
         <div class="menu-icons">
-            <ion-icon name="search"></ion-icon>
-            <ion-icon name="person"></ion-icon>
+            <a id="searchIcon"><ion-icon name="search"></ion-icon></a>
+            <a href="cadastrologin.html"><ion-icon name="person"></ion-icon></a>
         </div>
         <div class="dropdown-menu" id="dropdownMenu">
             <ul>
@@ -29,20 +29,22 @@
                 </div>
                 <span id="span-nome">Nome sobrenome</span>
                 <li class="menu-list"><a href="index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
-                <li class="menu-list"><a href="questionario.html"><ion-icon
-                            name="newspaper-sharp"></ion-icon>Questionario</a></li>
-                <li class="menu-list"><a href="assinaturas.html"><ion-icon name="star-sharp"></ion-icon>Minhas
-                        assinaturas</a></li>
-                <li class="menu-list"><a href="#"><ion-icon name="happy-sharp"></ion-icon>Meu humor</a></li>
+                <li class="menu-list"><a href="questionario.html"><ion-icon name="newspaper-sharp"></ion-icon>Questionario</a></li>
+                <li class="menu-list"><a href="assinaturas.html"><ion-icon name="star-sharp"></ion-icon>Minhas assinaturas</a></li>
+                <li class="menu-list"><a href="diario.html"><ion-icon name="happy-sharp"></ion-icon>Meu humor</a></li>
                 <li class="menu-list"><a href="indicacoes.html"><ion-icon name="flame"></ion-icon>Indicações</a></li>
-                <li class="menu-list"><a href="configuracoes.html"><ion-icon name="cog"></ion-icon>Configurações</a>
-                </li>
-                <li class="menu-list"><a href="termos.html"><ion-icon name="lock-closed"></ion-icon>Termos de
-                        privacidade</a></li>
+                <li class="menu-list"><a href="configuracoes.html"><ion-icon name="cog"></ion-icon>Configurações</a></li>
+                <li class="menu-list"><a href="termos.html"><ion-icon name="lock-closed"></ion-icon>Termos de privacidade</a></li>
                 <li class="menu-list"><a href="#"><ion-icon name="exit-outline"></ion-icon>Sair</a></li>
             </ul>
         </div>
     </nav>
+    <div class="search-container" id="searchContainer">
+        <div class="search-input" id="searchInput">
+            <input type="text" id="searchField" placeholder="Buscar...">
+            <ion-icon class="search-icon" name="search-outline"></ion-icon>
+        </div>
+    </div>
 </header>
 <main>
     <figure class="login-img">
@@ -63,7 +65,7 @@
             <div class="links">
                 <a href="#" class="forgot-password">ESQUECEU SUA SENHA?</a>
                 <p class="texto-register">AINDA NÃO POSSUI CONTA?</p>
-                <a href="#" class="register">CADASTRE-SE</a>
+                <a href="cadastro.html" class="register">CADASTRE-SE</a>
             </div>
         </form>
     </div>
