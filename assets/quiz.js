@@ -281,7 +281,7 @@ function mostrarKit (){
             <img src="./assets/img/imagem5.jpeg" alt="">
         </div>
         <div>
-                <p class="descricao-kit-questionario">${tratamentoSelecionado[0].pergunta}</p>
+                <p class="descricao-kit-questionario">Essência de cacau para aromaterapia 1</p>
                 <p class="descricao-kit-questionario">Essência de avelã para aromaterapia 1x</p>
                 <p class="descricao-kit-questionario">Essência de alecrim para aromaterapia 1x</p>
         </div>
