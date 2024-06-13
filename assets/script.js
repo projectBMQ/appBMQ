@@ -19,6 +19,45 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// barra de pesquisa com menu 
+// Evento para abrir/fechar a barra de pesquisa ao clicar no ícone de pesquisa
+document.getElementById('searchIcon').addEventListener('click', function() {
+    const searchContainer = document.getElementById('searchContainer');
+    const searchInput = document.getElementById('searchInput');
+    searchContainer.classList.toggle('active');
+    searchInput.classList.toggle('active');
+    if (searchInput.classList.contains('active')) {
+        document.getElementById('searchField').focus();
+    }
+});
+
+// Evento para capturar o Enter na barra de pesquisa
+document.getElementById('searchField').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        const query = event.target.value;
+        // Processa a pesquisa
+        console.log('Pesquisar por:', query);
+        // Adicione sua lógica de pesquisa aqui
+    }
+});
+
+// Evento para fechar a barra de pesquisa ao clicar fora dela
+document.addEventListener('click', function(event) {
+    const searchContainer = document.getElementById('searchContainer');
+    const searchInput = document.getElementById('searchInput');
+    const searchIcon = document.getElementById('searchIcon');
+
+    // Verifica se o clique foi fora do container de pesquisa e do ícone de pesquisa
+    if (!searchContainer.contains(event.target) && !searchIcon.contains(event.target)) {
+        if (searchContainer.classList.contains('active')) {
+            searchContainer.classList.remove('active');
+            searchInput.classList.remove('active');
+        }
+    }
+});
+
+
 // Validação de cadastro dos usuarios 
 document.getElementById('cadastroForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -77,3 +116,4 @@ function validatePhoneNumber(phone) {
     const re = /^\d{10,11}$/;
     return re.test(phone);
 }
+
