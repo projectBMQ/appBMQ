@@ -416,6 +416,36 @@ form h2 {
     transition: .5s;
 }
 
+.container-kit-questionario{
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 15px;
+    justify-items: center;
+}
+
+.kit-questionario{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+    justify-items: center;
+}
+
+.kit-questionario img{
+    width: 100%;
+    max-width: 100px;
+    height: 150px;
+    object-fit: cover;
+    padding: 5px;
+    border-radius: 10px;
+    border: #1B3700 solid 1px
+}
+
+.descricao-kit-questionario{
+    font-size: .7em;
+    color: #1B3700;
+}
+
 @media screen and (min-width:560px) {
     *{
         display: none;

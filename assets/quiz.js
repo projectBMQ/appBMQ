@@ -143,6 +143,15 @@ const saudeMental = [
     }
 ];
 
+const produtos = [
+    {
+        tratamento: "Aromaterapia",
+        produto: [
+            {}
+        ] ,
+    }
+];
+
 
 
 // Declaração de variáveis para o Questionário
@@ -153,38 +162,47 @@ const respostas = document.getElementById('respostas');
 const btnComecar = document.getElementById('comecarQuiz');
 const btnAvancar = document.getElementById('seguirQuiz');
 
+
+
 let contadorPerguntas = 0;
 let scoreFinal = 0;
 let tratamentoSelecionado = "";
 // console.log(respostas)
 
+// Ao clicar em começar armazena o tipo do tratamento e carrega a primeira pergunta
 btnComecar.addEventListener("click", function(){
    
-    escolherTratamento()
-    carregarPergunta();
+    escolherTratamento(); //Função para armazenar a escolha do tratamento
+    carregarPergunta(); // Função para carregar a próxima pergunta
+    btnComecar.setAttribute("style", "display:none"); // Adiciona o atributo display="none"
+    btnAvancar.removeAttribute("style", "display:none"); // Remove o atributo display="none"
     
 })
 
+// Botão para avançar a próxima pergunta. Carrega a próxima e adiciona +1 ao contador de perguntas
 btnAvancar.addEventListener("click", function(){
     contadorPerguntas++;
     carregarPergunta();
 })
 
+
 function escolherTratamento(){
     var tratamento = document.getElementsByName("tratamento");
     
+    // Laço de repetição para verificar qual opção foi selecionada a partir do "checked" do checkbox
     for (let index = 0; index < tratamento.length; index++) {
         if (tratamento[index].checked) {
             
+            // Armazena o valor da opção selecionada
             tratamentoSelecionado = tratamento[index].value;
 
-            console.log(tratamentoSelecionado)
+            // console.log(tratamentoSelecionado)
         }        
     }
 
+    // identifica o tratamento e armazena o array que contem as perguntas referentes ao tratamento
     if (tratamentoSelecionado == "Aromaterapia") {
         tratamentoSelecionado = aromaterapia;
-        tratamento
     } else if (tratamentoSelecionado == "Cuidados Pessoais") {
         tratamentoSelecionado = cuidadosPessoais;
     } else {
@@ -192,36 +210,84 @@ function escolherTratamento(){
     }
 }
 
+// Carrega a próxima pergunta a remove a anterior
 function carregarPergunta(){
 
+    // Limpa o conteúdo da div respostas enquanto ela tiver "filhos" (conteúdos dentro)
     while (respostas.firstChild) {
-        respostas.removeChild(respostas.firstChild)
+        respostas.removeChild(respostas.firstChild);
     }
 
-    
+    if(aromaterapia.length == contadorPerguntas){
+        //Caso seja a ultima pergunta, ele executa a função mostrar Kit e encerra a função atual
+        return mostrarKit();
+    }
 
+    // Exibe a pergunta referente ao contador de perguntas. O contador busca a posição da pergunta dentro da matriz principal (tratamento)[posição].informaçãoquedeseja
     pergunta.innerHTML = tratamentoSelecionado[contadorPerguntas].pergunta;
 
+    // Função para ler as respostas referente a cada pergunta por meio de um forEach
+    // Depois cria os elementos que conterão o conteúdo desse array
+    // tratamento[posição].informação.lerTudo
     tratamentoSelecionado[contadorPerguntas].respostas.forEach(resposta =>{
-        const novaResposta = document.createElement("label")
-        novaResposta.classList.add("alternativas")
+        const novaResposta = document.createElement("label") //Cria um novo elemento(tag) do tipo label
+        novaResposta.classList.add("alternativas") // Adiciona uma classe
 
-        const inputResposta = document.createElement("input");
-        inputResposta.setAttribute("type", "checkbox");
-        inputResposta.setAttribute("value", resposta.valor);
-        inputResposta.setAttribute("value", resposta.valor);
+        const inputResposta = document.createElement("input"); //Cria um novo elemento (tag) do tipo input
+        inputResposta.setAttribute("type", "checkbox"); //Atribue o tipo checkbox ao elemento
+        inputResposta.setAttribute("value", resposta.valor); // atribue o valor** referente a resposta
 
-        const spanResposta = document.createElement("span");
-        spanResposta.innerHTML = resposta.opcao;
+        // ** Esse valor tem como intuito ser usado para definir o kit de produtos ao final do questionário
+        // A ideia é somar o valor de cada resposta e ao fim fazer um balanço geral, dividindo em 3 partes ou quantos kits o Cliente está disposto a oferecer ao consumidor
+        // Sendo assim, exemplo:
+        // se valorTotalResposta > x{ mostrar = Kit1 }
+        // se valorTotalResposta > y{ mostrar = Kit2 }
+        // se valorTotalResposta > z{ mostrar = Kit3 }
+        // Assim em diante
+
+        const spanResposta = document.createElement("span"); //Cria um novo elemento (tag) do tipo span
+        spanResposta.innerHTML = resposta.opcao; // Adiciona a resposta encontrada na posição lida pelo forEach
         
-        novaResposta.appendChild(inputResposta);
-        novaResposta.appendChild(spanResposta);
+        // appendChild adiciona um elemento (elementoEscolhido) como filho de um elemento pai
+        // elementoPai.appendChild(elementoFilho)
+        // A linha acima é o mesmo que:
+        // <label class="alternativas">
+        //     <input type="checkbox" valor="resposta.valor"></input>
+        //     <span>resposta.opcao</span>
+        // </label>
 
-        respostas.appendChild(novaResposta);
+        novaResposta.appendChild(inputResposta); //atribue inputResposta como filho de novaResposta
+        novaResposta.appendChild(spanResposta); //atribue spanResposta como filho de novaResposta
+
+        respostas.appendChild(novaResposta); //atribue novaResposta como filho de respostas(containerPrincipal)
 
     })
-
-    btnComecar.setAttribute("style", "display:none")
-    btnAvancar.removeAttribute("style", "display:none");
     
+}
+
+// Função para mostrar o kit de produtos ao final do questionário
+function mostrarKit (){
+    // switch (true){
+    //     case ("pensando em como fazer isso"):
+    // }
+
+    btnAvancar.setAttribute("style", "display:none"); // Adiciona o atributo display="none"
+
+    respostas.innerHTML= 
+    `
+        <div class="kit-questionario">
+            <img src="./assets/img/imagem4.jpeg" alt="">
+            <img src="./assets/img/imagem3.jpeg" alt="">
+            <img src="./assets/img/imagem5.jpeg" alt="">
+        </div>
+        <div>
+                <p class="descricao-kit-questionario">${tratamentoSelecionado[0].pergunta}</p>
+                <p class="descricao-kit-questionario">Essência de avelã para aromaterapia 1x</p>
+                <p class="descricao-kit-questionario">Essência de alecrim para aromaterapia 1x</p>
+        </div>
+        <button class="avancarQuestionario">Assinar</button>
+
+    `;
+
+    pergunta.innerText = "Kit Aromaterapia"
 }
