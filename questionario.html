@@ -47,38 +47,40 @@
         </div>
     </header>
 
-<main class="conteudo-questionario">
+    <main class="conteudo-questionario">
 
-    <div class="questionario">
+        <div class="questionario">
 
-        <h1 id="logo-quiz"><img src="assets/img/logo.png" alt=""></h1>
+            <h1 id="logo-quiz"><img src="assets/img/logo.png" alt=""></h1>
 
-        <h3 id="pergunta">Escolha seu tratamento:</h3>
+            <h3 id="pergunta">Escolha seu tratamento:</h3>
+            
+            <form id="respostas">      
+                <label class="alternativas">
+                    <input type="checkbox" name="tratamento" value="Aromaterapia">
+                    <span>Aromaterapia</span>
+                </label>
+                <label class="alternativas">
+                    <input type="checkbox" name="tratamento" value="Cuidados Pessoais">
+                    <span>Cuidados Pessoais</span>
+                </label>
+                <label class="alternativas">
+                    <input type="checkbox" name="tratamento" value="Saúde Mental">
+                    <span>Saúde Mental</span>
+                </label>
+            </form>
+
+            <button id="comecarQuiz" class="avancarQuestionario">COMEÇAR</button>
+            <button id="seguirQuiz" style="display: none;" class="avancarQuestionario" >Próxima</button>
+
+        </div>
+
+    </main>
+
+    <footer>
         
-        <form id="respostas">      
-            <label class="alternativas">
-                <input type="checkbox" name="tratamento" value="Aromaterapia">
-                <span>Aromaterapia</span>
-            </label>
-            <label class="alternativas">
-                <input type="checkbox" name="tratamento" value="Cuidados Pessoais">
-                <span>Cuidados Pessoais</span>
-            </label>
-            <label class="alternativas">
-                <input type="checkbox" name="tratamento" value="Saúde Mental">
-                <span>Saúde Mental</span>
-            </label>
-        </form>
-
-        <button id="comecarQuiz" class="avancarQuestionario">COMEÇAR</button>
-        <button id="seguirQuiz" style="display: none;" class="avancarQuestionario" >Próxima</button>
-
-    </div>
-
-</main>
-<footer>
+    </footer>
     
-</footer>
     <script src="assets/quiz.js" type="module"></script>
     <script src="assets/script.js" type="module"></script>
 </body>
