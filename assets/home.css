@@ -50,7 +50,7 @@ p {
   #descrição {
     background-color: white;
     text-align: center;
-    padding: 17px;
+    padding: 10px;
     color: #223512;
   }
   #descrição h2 {
@@ -61,6 +61,7 @@ p {
     background-color: #e5e6d9;
     height: 100%;
     padding: 20px 10px;
+    margin-bottom: 30px;
   }
   #descrição-card1 {
     display: flex;
