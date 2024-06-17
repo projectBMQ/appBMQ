@@ -301,8 +301,8 @@ function mostrarKit (){
                     </div>
                 </div>
                 <div class="opcoes-produto-kit">
-                    <span> R$ 29,90</span>
                     <div class="excluir">Excluir</div>
+                    <span> R$ 29,90</span>
                 </div>
             </div>
         </div>
