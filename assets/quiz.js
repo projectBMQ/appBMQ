@@ -276,15 +276,37 @@ function mostrarKit (){
     respostas.innerHTML= 
     `
         <div class="kit-questionario">
-            <img src="./assets/img/imagem4.jpeg" alt="">
-            <img src="./assets/img/imagem3.jpeg" alt="">
-            <img src="./assets/img/imagem5.jpeg" alt="">
+            <div class="produto-kit">
+                <div class="conteudo-produto-kit">
+                    <img src="./assets/img/imagem4.jpeg" alt="">
+                    <div class="info-produto-kit">
+                        <h4>Produto1</h4>
+                        <p class="descricao-kit-questionario">CALM Combinação de óleos essenciais para SERENIDADE e TRANQUILIDADE. </p>
+                        <span class="saiba-mais-produto-kit"> Saiba Mais</span>
+                    </div>
+                </div>
+                <div class="opcoes-produto-kit">
+                    <span> R$ 19,90</span>
+                    <div class="excluir">Excluir</div>
+                </div>
+            </div>
+
+            <div class="produto-kit">
+                <div class="conteudo-produto-kit">
+                    <img src="./assets/img/imagem7.jpeg" alt="">
+                    <div class="info-produto-kit">
+                        <h4>Produto1</h4>
+                        <p class="descricao-kit-questionario">CALM Combinação de óleos essenciais para SERENIDADE e TRANQUILIDADE. </p>
+                        <span class="saiba-mais-produto-kit"> Saiba Mais</span>
+                    </div>
+                </div>
+                <div class="opcoes-produto-kit">
+                    <div class="excluir">Excluir</div>
+                    <span> R$ 29,90</span>
+                </div>
+            </div>
         </div>
-        <div>
-                <p class="descricao-kit-questionario">Essência de cacau para aromaterapia 1</p>
-                <p class="descricao-kit-questionario">Essência de avelã para aromaterapia 1x</p>
-                <p class="descricao-kit-questionario">Essência de alecrim para aromaterapia 1x</p>
-        </div>
+        
         <button class="avancarQuestionario">Assinar</button>
 
     `;
