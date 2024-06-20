@@ -26,10 +26,10 @@ h3{
 ::placeholder{
     text-align: center;
 }
-#nome{
+#nome, #email, #tel, #complemento{
     width: 270px;
     height: 42px;
-    border: 1px solid;
+    border: 1px solid #e5e6d9;
     border-radius: 17px;
     text-align: center;
     background-color: #e5e6d9;
@@ -50,7 +50,7 @@ h3{
 #endereço{
     width: 168px;
     height: 42px;
-    border: 1px solid;
+    border: 1px solid #e5e6d9;
     border-radius: 17px;
     text-align: center;
     background-color: #e5e6d9;
@@ -59,7 +59,7 @@ h3{
 #numero-cep{
     width: 100px;
     height: 42px;
-    border: 1px solid;
+    border: 1px solid #e5e6d9;
     border-radius: 17px;
     margin-left: 5px;
     text-align: center;
@@ -73,7 +73,7 @@ h3{
 #cep, #cidade{
     width: 126px;
     height: 42px;
-    border: 1px solid;
+    border: 1px solid #e5e6d9;
     border-radius: 17px;
     text-align: center;
     background-color: #e5e6d9;
@@ -81,24 +81,22 @@ h3{
 #bairro, #uf{
     width: 139px;
     height: 42px;
-    border: 1px solid;
+    border: 1px solid #e5e6d9; 
     border-radius: 17px;
     margin-left: 5px;
     text-align: center;
     background-color: #e5e6d9;
 }
 #senha-perfil, #confirma-senha{
-    background-color: #ADC172;
+    background-color: #e5e6d9;
     width: 270px;
     height: 42px;
-    border: 1px solid;
+    border: 1px solid #e5e6d9;
     border-radius: 17px;
     text-align: center;
     
 }
-#senha-perfil::placeholder, #confirma-senha::placeholder{
-    color: black;
-}
+
 #btn-submit{
     display: flex;
     justify-content: center;

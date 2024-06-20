@@ -50,61 +50,40 @@
         </a>
         <h3>FULANA DA SILVA</h3>
         <div class="inputs-padrões">
-            <input type="text" name="nome" class="input0" id="nome" placeholder="FULANA DA SILVA PINHEIROS" readonly>
+            <input type="text" name="nome" class="input0" id="nome" placeholder="FULANA DA SILVA PINHEIROS" value="">
         </div>
         <div class="inputs-padrões">
-            <input type="email" name="email" class="input0" id="nome" placeholder="EMAIL CADASTRADO" readonly>
+            <input type="email" name="email" class="input0" id="email" placeholder="EMAIL CADASTRADO" value="">
         </div>
         <div class="inputs-padrões">
-            <input type="tel" name="telefone" class="input0" id="nome" placeholder="TELEFONE CADASTRADO" readonly>
+            <input type="tel" name="telefone" class="input0" id="tel" placeholder="TELEFONE CADASTRADO" value="" >
         </div>
         <div class="input-endereço-numero">
-            <input type="text" name="endereço"class="input0" id="endereço" placeholder="ENDEREÇO" readonly>
-            <input type="number" class="input0" id="numero-cep" name="numero" placeholder="N*" readonly>
+            <input type="text" name="endereço"class="input0" id="endereço" placeholder="ENDEREÇO" value="">
+            <input type="number" class="input0" id="numero-cep" name="numero" placeholder="N*" value="">
         </div>
         <div class="input-cep-bairro">
-            <input type="number" name="cep" class="input0" id="cep" placeholder="CEP" readonly>
-            <input type="text" class="input0" id="bairro" name="bairro" placeholder="BAIRRO" readonly>
+            <input type="number" name="cep" class="input0" id="cep" placeholder="CEP" value="" >
+            <input type="text" class="input0" id="bairro" name="bairro" placeholder="BAIRRO" value="">
         </div>
         <div class="input-cidade-uf">
-            <input type="text" name="cidade" class="input" id="cidade" placeholder="CIDADE" readonly>
-            <input type="text" class="input0" id="uf" name="uf" placeholder="UF" readonly>
+            <input type="text" name="cidade" class="input" id="cidade" placeholder="CIDADE" value="">
+            <input type="text" class="input0" id="uf" name="uf" placeholder="UF" >
         </div>
         <div class="inputs-padrões">
-            <input type="text" name="complemento" class="input0" id="nome" placeholder="COMPLEMENTO" readonly>
+            <input type="text" name="complemento" class="input0" id="complemento" placeholder="COMPLEMENTO" value="">
         </div>
         <div class="inputs-padrões">
-            <input type="password" name="senha-perfil" id="senha-perfil" placeholder="SENHA">
+            <input type="password" name="senha-perfil" id="senha-perfil" placeholder="SENHA" required value="">
         </div> 
-        <div class="inputs-padrões">
-            <input type="password" name="confirma-senha" id="confirma-senha" placeholder="CONFIRMAÇÃO DE SENHA">
-        </div>
+
         <div id="btn-submit">     
         <button type="submit" onclick="button_submit()">CONFIRMAR</button>
         </div>
     </main>
     <!--Espaço para footer-->
      
-    <script>
-        // Validação da senha com a confirmação
-        function button_submit(){
-            var senha = document.getElementById("senha-perfil").value;
-            var confirmaSenha = document.getElementById("confirma-senha").value;
 
-
-
-            if(senha !== confirmaSenha){
-                alert("As senhas não coincidem!")
-            } else {
-             alert("Agora você pode alterar!")
-             var input_withRead = document.getElementsByClassName("input0")
-            //  input_withRead.removeAttribute("readonly");
-            for (var input of input_withRead) {
-            input.removeAttribute("readonly");
-        }
-        }
-    }
-    </script>
     <script src="assets/script.js"></script>
 </body>
 
