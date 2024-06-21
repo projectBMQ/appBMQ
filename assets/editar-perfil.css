@@ -1,0 +1,118 @@
+h3{
+    margin-bottom: 10px;
+}
+.img-editarperfil{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.header-drop{
+    justify-content: left;
+    margin-left: 44px;
+    margin-bottom: 31px;
+}
+#desc_editperfil h3{
+    margin-left: 16px;
+}
+#p1{
+    text-align: unset;
+    margin-top: 4px;
+    margin-left: 17px;
+    font-size: 11px;
+}
+#align-classif{
+    display: flex;
+    justify-content: center;
+}
+#classif-humor{
+    width: 90%;
+    margin-top: 11px;
+    max-width: 546px;
+    border: 1px solid #e5e6d9;
+    height: 66px;
+    border-radius: 27px;
+    background-color: #e5e6d9;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 7px;
+}
+#classif-humor img{
+    width: 50px;
+    height: 50px;
+}
+#align-img{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 14px;
+}
+main img{
+    border-radius: 27px;
+    height: 171px;
+    width: 34%;
+    max-width: 138px;
+    object-fit: cover;
+}
+#tratamento_escolh{
+    background-color: #e5e6d9;
+    margin-bottom: 16px;
+    padding-top: 20px;
+}
+#align-exper{
+    display: flex;
+    justify-content: center;
+}
+#experiencia{
+    width: 65%;
+    text-align: center;
+    border: 1px solid #E1C6BC ;
+    height: 32px;
+    border-radius: 27px;
+    padding-top: 7px;
+    background-color: #E1C6BC;
+    color: #1B3700;
+}
+#align-trat{
+    display: flex;
+    justify-content: center;
+}
+#novo-tratamento{
+    margin-top: 40px;
+    margin-bottom:10px;
+    width: 80%;
+    max-width: 530px;
+    height: 119px;
+    background-color: #ADC172;
+    border-radius: 27px;
+}
+#align-button{
+    display: flex;
+    justify-content: center;
+}
+button{
+    font-size: 12px;
+    width: 50%;
+    max-width: 120px;
+    height: 37px;
+    border: 1px solid darkolivegreen;
+    border-radius: 17px;
+    background-color: darkolivegreen;
+    color: white;
+    font-weight: 750;
+    margin-top: 13px;
+}
+
+@media screen and (max-width: 415px) {
+    h3{
+        font-size: medium;
+    }
+    h4{
+        font-size: 13px;
+    }
+    #align-img img{
+        border-radius: 27px;
+        height: 134px;
+        max-width: 99px;
+        object-fit: cover;
+    }
+}
