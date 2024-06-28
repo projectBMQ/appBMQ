@@ -8,6 +8,7 @@
 }
 
 body {
+    /* height: 100%; */
     font-family: Arial, sans-serif;
 }
 
@@ -20,7 +21,8 @@ body {
     background-color: #4C6410;
     color: white;
     position: relative;
-    z-index: 1000; 
+    z-index: 1000;
+    margin-bottom: 20px;
 }
 
 .menu-toggle {
@@ -535,6 +537,42 @@ form h2 {
     font-weight: 500;
     color: white;
     background-color: #4C6410;
+}
+
+/* Página de Indicações */
+
+.indicacoes-main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+    padding: 0 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 1em;
+}
+
+.indicacoes-main img{
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+.container-indicacoes{
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 15px;
+}
+
+.indicacao{
+    background-color: #E5E6D9;
+    padding: 15px 0;
+    border-radius: 20px;
+    color: #1B3700;
+    font-weight: 600;
+    text-decoration: none;
 }
 
 @media screen and (min-width:560px) {
