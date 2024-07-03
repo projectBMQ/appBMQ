@@ -42,31 +42,31 @@ body {
 
 .cor1 {
     background-color: #FFEC3F;
-    padding: 5px 0;
+    padding: 7px 5px;
     border-radius: 50%;
 }
 
 .cor2 {
     background-color: #FFCC4D;
-    padding: 5px 0;
+    padding: 7px 5px;
     border-radius: 50%;
 }
 
 .cor3 {
     background-color: #80BDDB;
-    padding: 5px 0;
+    padding: 7px 5px;
     border-radius: 50%;
 }
 
 .cor4 {
     background-color: #4D7AFF;
-    padding: 5px 0;
+    padding: 7px 5px;
     border-radius: 50%;
 }
 
 .cor5 {
     background-color: #DA2F47;
-    padding: 5px 0;
+    padding: 7px 5px;
     border-radius: 50%;
 }
 
@@ -79,55 +79,58 @@ ul {list-style-type: none;}
 }
 
 .mes{
-    margin: 40px 0 10px;
+    margin: 10px;
 }
 
 .dias-semana {
     font-size: smaller;
-    padding: 10px 0;
     background-color: #ddd;
     text-align: center;
 }
 
 .dias-semana li {
     display: inline-block;
-    width: 13.6%;
+    width: 12%;
     text-align: center;
+    padding: 10px 0;
 }
 
 .dias {
-    padding: 10px 0 10px 10px;
     background: #eee;
+    padding: 15px;
 }
 
 .dias li {
   list-style-type: none;
   display: inline-block;
-  width: 13.6%;
   text-align: center;
-  margin-bottom: 5px;
-  font-size: 20px;
+  font-size: large;
   color: #777;
+  margin-bottom: 5px;
 }
 
-.dias li .active {
+/* .dias li .active {
     padding: 7px 4px;
     border-radius: 50%;
     background: black;
-}
+} */
 
 /* MEDIA PARA TELAS MENORES */
-@media screen and (max-width:720px) {
+/* @media screen and (max-width:720px) {
   .dias-semana li, .dias li {width: 13.1%;}
 
-}
+}*/
 
-@media screen and (max-width: 420px) {
-  .dias-semana li, .dias li {width: 12.5%;}
-  
-}
+@media screen and (min-width: 375px) {
+    .dias li {
+        font-size: larger;
+        margin: 3px;
+    }
+    
+  }
 
-@media screen and (max-width: 290px) {
-  .dias-semana li, .dias li {width: 12.2%;}
-}
-
+  @media screen and (min-width: 425px) {
+    .dias li {
+        font-size: x-large;
+    }
+  } 
