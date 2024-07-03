@@ -12,6 +12,8 @@
 }
 main p{
     text-align: center;
+    font-weight: 600;
+    color: #223512;
 }
 #p1{
     font-size: 13px;

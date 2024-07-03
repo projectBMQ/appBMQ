@@ -8,6 +8,7 @@
 }
 
 body {
+    /* height: 100%; */
     font-family: Arial, sans-serif;
 }
 
@@ -20,7 +21,8 @@ body {
     background-color: #4C6410;
     color: white;
     position: relative;
-    z-index: 1000; 
+    z-index: 1000;
+    margin-bottom: 20px;
 }
 
 .menu-toggle {
@@ -419,7 +421,13 @@ form h2 {
     justify-content: center;
 }
 
-.avancarQuestionario{
+#addProduto{
+    background-color: #78874c;
+    width: 100%;
+    margin: 0;
+}
+
+.btnQuestionario{
     margin: 20px 0;
     padding: 10px 30px;
     background-color: #4C6410;
@@ -430,6 +438,8 @@ form h2 {
     box-shadow: 1px 2px 5px #ADC172;
     cursor: pointer;
 }
+
+
 
 #pergunta{
     margin: 20px 0;
@@ -479,12 +489,8 @@ form h2 {
 
 .kit-questionario img{
     width: 100%;
-    /* max-width: 100px; */
-    height: 180px;
+    height: 130px;
     object-fit: cover;
-    /* padding: 5px; */
-    /* border-radius: 10px; */
-    /* border: #1B3700 solid 1px */
 }
 
 .produto-kit{
@@ -504,7 +510,7 @@ form h2 {
 .info-produto-kit{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 10px;
     /* margin-left: 10px; */
     text-align: left;
@@ -512,17 +518,8 @@ form h2 {
 }
 
 .descricao-kit-questionario{
-    font-size: .8em;
-    color: #1B3700;
-}
-
-.saiba-mais-produto-kit{
     font-size: .7em;
     color: #1B3700;
-    padding: 5px 10px;
-    border: #1B3700 solid 1px;
-    text-align: center;
-    /* width: fit-content; */
 }
 
 .opcoes-produto-kit{
@@ -535,6 +532,112 @@ form h2 {
     font-weight: 500;
     color: white;
     background-color: #4C6410;
+}
+
+.tipoAssinatura{
+    width: 100%;
+    background-color: #E5E6D9;
+    border: 1px solid #4C6410;
+    border-radius: 5px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.cateAssinatura {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    /* font-size: 22px; */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .cateAssinatura input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkAssinatura {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+
+  .cateAssinatura input:checked ~ .checkAssinatura {
+    background-color: #4C6410;
+  }
+
+  .checkAssinatura:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .cateAssinatura input:checked ~ .checkAssinatura:after {
+    display: block;
+  }
+
+  .cateAssinatura .checkAssinatura:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
+
+/* Página de Indicações */
+
+.indicacoes-main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 15px;
+    padding: 0 15px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 1em;
+}
+
+.indicacoes-main img{
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+.container-indicacoes{
+    display: grid;
+    grid-template-rows: 1fr;
+    gap: 15px;
+}
+
+.indicacao{
+    background-color: #E5E6D9;
+    padding: 15px 0;
+    border-radius: 20px;
+    color: #1B3700;
+    font-weight: 600;
+    font-size: .9em;
+    text-decoration: none;
+}
+
+.indicacao h4{
+    font-weight: 800;
 }
 
 @media screen and (min-width:560px) {

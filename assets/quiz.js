@@ -267,9 +267,6 @@ function carregarPergunta(){
 
 // Função para mostrar o kit de produtos ao final do questionário
 function mostrarKit (){
-    // switch (true){
-    //     case ("pensando em como fazer isso"):
-    // }
 
     btnAvancar.setAttribute("style", "display:none"); // Adiciona o atributo display="none"
 
@@ -282,11 +279,10 @@ function mostrarKit (){
                     <div class="info-produto-kit">
                         <h4>Produto1</h4>
                         <p class="descricao-kit-questionario">CALM Combinação de óleos essenciais para SERENIDADE e TRANQUILIDADE. </p>
-                        <span class="saiba-mais-produto-kit"> Saiba Mais</span>
                     </div>
                 </div>
                 <div class="opcoes-produto-kit">
-                    <span> R$ 19,90</span>
+                    <span class="trocarProduto">Editar</span>
                     <div class="excluir">Excluir</div>
                 </div>
             </div>
@@ -297,19 +293,40 @@ function mostrarKit (){
                     <div class="info-produto-kit">
                         <h4>Produto1</h4>
                         <p class="descricao-kit-questionario">CALM Combinação de óleos essenciais para SERENIDADE e TRANQUILIDADE. </p>
-                        <span class="saiba-mais-produto-kit"> Saiba Mais</span>
                     </div>
                 </div>
                 <div class="opcoes-produto-kit">
+                    <span>Editar</span>
                     <div class="excluir">Excluir</div>
-                    <span> R$ 29,90</span>
+                    
                 </div>
+            </div>
+            <span class="descricao-kit-questionario">Você ainda pode adicionar produtos</span>
+            <button id="addProduto" class="btnQuestionario">Adicionar</button>
+
+            <div class="tipoAssinatura">
+                <h4>Forma de Assinatura</h4>
+                
+                <label class="cateAssinatura">Mensal - R$100,00
+                <input type="checkbox" checked="checked">
+                <span class="checkAssinatura"></span>
+                </label>
+                
+                <label class="cateAssinatura">Trimestral - R$250,00
+                <input type="checkbox">
+                <span class="checkAssinatura"></span>
+                </label>
             </div>
         </div>
         
-        <button class="avancarQuestionario">Assinar</button>
+        
+        <button  class="btnQuestionario">Assinar</button>
 
     `;
 
     pergunta.innerText = "Kit Aromaterapia"
+}
+
+function adicionarProdutos() {
+    
 }

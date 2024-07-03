@@ -3,15 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
+     <!-- Link para a biblioteca Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+     <!-- Biblioteca icones-->
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+     <link rel="stylesheet" href="assets/style.css">
     <title>Indicações</title>
 </head>
 <body>
-<header>
+    <header>
+        <nav class="navbar">
+            <button class="menu-toggle" id="menuToggle">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+            <img src="assets/img/logo.png" alt="Logo" class="logo">
+            <div class="menu-icons">
+                <a id="searchIcon"><ion-icon name="search"></ion-icon></a>
+                <a href="cadastrologin.html"><ion-icon name="person"></ion-icon></a>
+            </div>
+            <div class="dropdown-menu" id="dropdownMenu">
+                <ul>
+                    <div class="header-drop">
+                        <img src="assets/img/exemplo-perfil.webp" alt="" class="img-perfil">
+                    </div>
+                    <span id="span-nome">Nome sobrenome</span>
+                    <li class="menu-list"><a href="index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
+                    <li class="menu-list"><a href="questionario.html"><ion-icon name="newspaper-sharp"></ion-icon>Questionario</a></li>
+                    <li class="menu-list"><a href="assinaturas.html"><ion-icon name="star-sharp"></ion-icon>Minhas assinaturas</a></li>
+                    <li class="menu-list"><a href="diario.html"><ion-icon name="happy-sharp"></ion-icon>Meu humor</a></li>
+                    <li class="menu-list"><a href="indicacoes.html"><ion-icon name="flame"></ion-icon>Indicações</a></li>
+                    <li class="menu-list"><a href="configuracoes.html"><ion-icon name="cog"></ion-icon>Configurações</a></li>
+                    <li class="menu-list"><a href="termos.html"><ion-icon name="lock-closed"></ion-icon>Termos de privacidade</a></li>
+                    <li class="menu-list"><a href="#"><ion-icon name="exit-outline"></ion-icon>Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="search-container" id="searchContainer">
+            <div class="search-input" id="searchInput">
+                <input type="text" id="searchField" placeholder="Buscar...">
+                <ion-icon class="search-icon" name="search-outline"></ion-icon>
+            </div>
+        </div>
+    </header>
+<main class="indicacoes-main">
+    <h2>Indicações de Profissionais</h2>
+    <img src="assets/img/indicacao.jpg" alt="Imagem de uma consulta ao psicologo">
+    <h3>Mais próximo á você</h3>
+    <div class="mapa-indicacao">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d12304.524817574997!2d-46.7019202829275!3d-23.52685082502978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spsicologos%20proximos%20de%20senac%20lapa%20tito!5e0!3m2!1sen!2sbr!4v1719503546342!5m2!1sen!2sbr" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+    </div>
 
-</header>
-<main>
+    <div class="container-indicacoes">
 
+        <a class="indicacao maisProximo" href="https://nossospsicologos.com.br/profissional/gabriela-santana-da-silva" target="_blank">
+            <h4>Psicóloga Gabriela Santana</h4>
+            <p>Seg à Sex - 9h às 22h</p>
+            <p>Valores a partir de R$143,00</p>
+            <p>R. Espártaco, 335 - Lapa</p>
+        </a>
+
+        <a class="indicacao maisProximo" href="https://nossospsicologos.com.br/profissional/gabriela-santana-da-silva" target="_blank">
+            <h4>Psicóloga Thaina Gonçalves</h4>
+            <p>Seg à Sab - 7h às 20h</p>
+            <p>Valores não informados</p>
+            <p>R. Caio Graco - Lapa</p>
+        </a>
+        
+        <a class="indicacao maisProximo" href="https://nossospsicologos.com.br/profissional/gabriela-santana-da-silva" target="_blank">
+            <h4>Psicologa - Layane C. Arcieri</h4>
+            <p>Seg à Sex - 8h às 21h</p>
+            <p>Valores a combinar</p>
+            <p>R. Clélia, 2208 - Lapa</p>
+        </a>
+
+        <a class="indicacao gratuito" href="https://nossospsicologos.com.br/profissional/gabriela-santana-da-silva" target="_blank">
+            <h4>LugaresPSI+ Atendimentos em Psicologia</h4>
+            <p>Seg à Sex - 8h às 21h</p>
+            <p>Valores a combinar</p>
+            <p>R. Clélia, 2208 - Lapa</p>
+        </a>
 </main>
 <footer>
     
