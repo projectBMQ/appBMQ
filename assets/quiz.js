@@ -301,24 +301,30 @@ function mostrarKit (){
                     
                 </div>
             </div>
-            <span class="descricao-kit-questionario">Você ainda pode adicionar produtos</span>
-            <button id="addProduto" class="btnQuestionario">Adicionar</button>
-
-            <div class="tipoAssinatura">
-                <h4>Forma de Assinatura</h4>
-                
-                <label class="cateAssinatura">Mensal - R$100,00
-                <input type="checkbox" checked="checked">
-                <span class="checkAssinatura"></span>
-                </label>
-                
-                <label class="cateAssinatura">Trimestral - R$250,00
-                <input type="checkbox">
-                <span class="checkAssinatura"></span>
-                </label>
+            <div>
+                <button id="addProduto" class="btnQuestionario">Adicionar</button>
+                <span class="descricao-kit-questionario">Você ainda pode adicionar produtos</span>
             </div>
+
+            
+            
+            
         </div>
         
+
+        
+
+        <div class="tipoAssinatura" method="post" action="#">
+                
+                <h3>Forma de Assinatura</h3>
+
+                <label class="cateAssinatura">
+                <input type="radio" required name="plano" checked> Mensal - R$100,00 (Recomendado)</label>
+                
+                <label class="cateAssinatura">
+                <input type="radio" required name="plano"> Trimestral - R$250,00
+                </label>
+        </div>
         
         <button  class="btnQuestionario">Assinar</button>
 

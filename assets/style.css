@@ -422,7 +422,7 @@ form h2 {
 }
 
 #addProduto{
-    background-color: #78874c;
+    /* background-color: #78874c; */
     width: 100%;
     margin: 0;
 }
@@ -484,6 +484,7 @@ form h2 {
     grid-template-rows: 1fr;
     gap: 15px;
     justify-items: center;
+    margin-bottom: 10px;
     
 }
 
@@ -491,6 +492,8 @@ form h2 {
     width: 100%;
     height: 130px;
     object-fit: cover;
+    border-radius: 5px 0 0 0;
+    
 }
 
 .produto-kit{
@@ -498,7 +501,8 @@ form h2 {
     grid-template-rows: 1fr;
     justify-items: center;
     /* padding: 10px 5px; */
-    border: #4C6410 solid 1px
+    border: #ADC172 solid 1px;
+    border-radius: 5px;
 }
 
 .conteudo-produto-kit{
@@ -514,11 +518,11 @@ form h2 {
     margin: 10px;
     /* margin-left: 10px; */
     text-align: left;
-    color: #1B3700;
+    color: #6f6f6f;
 }
 
 .descricao-kit-questionario{
-    font-size: .7em;
+    font-size: .8em;
     color: #1B3700;
 }
 
@@ -529,44 +533,44 @@ form h2 {
     width: 100%;
     padding: 10px 20px;
     font-size: .9em;
+    border-radius: 0 0 5px 5px;
     font-weight: 500;
     color: white;
-    background-color: #4C6410;
+    background-color: #ADC172;
 }
 
 .tipoAssinatura{
     width: 100%;
-    background-color: #E5E6D9;
-    border: 1px solid #4C6410;
+    background-color: #adc17242;
+    /* border: 3px solid #78796b; */
     border-radius: 5px;
-    padding: 10px;
+    padding: 20px 10px;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 20px;
 }
 
 .cateAssinatura {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    /* font-size: 22px; */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    width: 100%;
+    background-color: #ADC172;
+    color: white;
+    padding: 20px 10px;
+    display: flex;
+    gap: 10px;
+    border-radius: 10px;
+    font-size: .9em;
+    font-weight: 600;
   }
 
-  .cateAssinatura input {
+  /* .cateAssinatura input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
-  }
+  } */
 
-  .checkAssinatura {
+  /* .checkAssinatura {
     position: absolute;
     top: 0;
     left: 0;
@@ -574,12 +578,12 @@ form h2 {
     width: 25px;
     background-color: #eee;
     border-radius: 50%;
-  }
+  } */
 
-  .cateAssinatura input:checked ~ .checkAssinatura {
+   .cateAssinatura input:checked ~ .checkAssinatura {
     background-color: #4C6410;
   }
-
+/*
   .checkAssinatura:after {
     content: "";
     position: absolute;
@@ -597,7 +601,7 @@ form h2 {
     height: 8px;
     border-radius: 50%;
     background: white;
-  }
+  } */
 
 /* Página de Indicações */
 
