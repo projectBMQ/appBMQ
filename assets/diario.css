@@ -32,105 +32,56 @@ body {
     background-color: rgb(233, 233, 233);
     border-radius: 50px;
     padding: 5px;
-    margin: 20px 10px;
-    
+    margin: 20px 10px;    
 }
 
 .emocoes span:active {
     background-color: black;
 }
 
-.cor1 {
-    background-color: #FFEC3F;
-    padding: 7px 5px;
+.emojis {
+    padding: 1%;
     border-radius: 50%;
-}
-
-.cor2 {
-    background-color: #FFCC4D;
-    padding: 7px 5px;
-    border-radius: 50%;
-}
-
-.cor3 {
-    background-color: #80BDDB;
-    padding: 7px 5px;
-    border-radius: 50%;
-}
-
-.cor4 {
-    background-color: #4D7AFF;
-    padding: 7px 5px;
-    border-radius: 50%;
-}
-
-.cor5 {
-    background-color: #DA2F47;
-    padding: 7px 5px;
-    border-radius: 50%;
+    width: 50px;
 }
 
 /* CALENDÁRIO */
 
-ul {list-style-type: none;}
+.mes{
+    margin: 40px 5% 20px;
+}
 
 .container-calendario {
-    margin: 10px;
-}
-
-.mes{
-    margin: 10px;
-}
-
-.dias-semana {
-    font-size: smaller;
+    padding: 5px;
+    margin: auto;
     background-color: #ddd;
     text-align: center;
 }
 
-.dias-semana li {
-    display: inline-block;
-    width: 12%;
-    text-align: center;
-    padding: 10px 0;
+.container-calendario th, td {
+    margin: 3px;
+    padding: 3px;
 }
 
-.dias {
-    background: #eee;
-    padding: 15px;
+.emojis-calendario {
+    width: 30px;
 }
-
-.dias li {
-  list-style-type: none;
-  display: inline-block;
-  text-align: center;
-  font-size: large;
-  color: #777;
-  margin-bottom: 5px;
-}
-
-/* .dias li .active {
-    padding: 7px 4px;
-    border-radius: 50%;
-    background: black;
-} */
-
-/* MEDIA PARA TELAS MENORES */
-/* @media screen and (max-width:720px) {
-  .dias-semana li, .dias li {width: 13.1%;}
-
-}*/
 
 @media screen and (min-width: 375px) {
-    .dias li {
-        font-size: larger;
+    .emojis-calendario {
+        width: 35px;
         margin: 3px;
     }
-    
-  }
+}
 
-  @media screen and (min-width: 425px) {
-    .dias li {
-        font-size: x-large;
+@media screen and (min-width: 400px) {
+    .emojis-calendario {
+        margin: 5px;
     }
-  } 
+}
+
+@media screen and (min-width: 500px) {
+    .emojis-calendario {
+        margin: 10px;
+    }
+}
