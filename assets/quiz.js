@@ -219,8 +219,10 @@ function carregarPergunta(){
     }
 
     if(aromaterapia.length == contadorPerguntas){
-        //Caso seja a ultima pergunta, ele executa a função mostrar Kit e encerra a função atual
-        return mostrarKit();
+        //Caso seja a ultima pergunta, ele executa a função mostrar Carrinho e encerra a função atual
+        btnAvancar.setAttribute("style", "display:none");
+        pergunta.innerText = "Avaliando respostas e montando o seu Kit"
+        return mostrarCarrinho();
     }
 
     // Exibe a pergunta referente ao contador de perguntas. O contador busca a posição da pergunta dentro da matriz principal (tratamento)[posição].informaçãoquedeseja
@@ -266,71 +268,21 @@ function carregarPergunta(){
 }
 
 // Função para mostrar o kit de produtos ao final do questionário
-function mostrarKit (){
+function mostrarCarrinho (){
 
-    btnAvancar.setAttribute("style", "display:none"); // Adiciona o atributo display="none"
+    
 
-    respostas.innerHTML= 
-    `
-        <div class="kit-questionario">
-            <div class="produto-kit">
-                <div class="conteudo-produto-kit">
-                    <img src="./assets/img/imagem4.jpeg" alt="">
-                    <div class="info-produto-kit">
-                        <h4>Produto1</h4>
-                        <p class="descricao-kit-questionario">CALM Combinação de óleos essenciais para SERENIDADE e TRANQUILIDADE. </p>
-                    </div>
-                </div>
-                <div class="opcoes-produto-kit">
-                    <span class="trocarProduto">Editar</span>
-                    <div class="excluir">Excluir</div>
-                </div>
-            </div>
+    window.location.href = "carrinho.html";
 
-            <div class="produto-kit">
-                <div class="conteudo-produto-kit">
-                    <img src="./assets/img/imagem7.jpeg" alt="">
-                    <div class="info-produto-kit">
-                        <h4>Produto1</h4>
-                        <p class="descricao-kit-questionario">CALM Combinação de óleos essenciais para SERENIDADE e TRANQUILIDADE. </p>
-                    </div>
-                </div>
-                <div class="opcoes-produto-kit">
-                    <span>Editar</span>
-                    <div class="excluir">Excluir</div>
-                    
-                </div>
-            </div>
-            <div>
-                <button id="addProduto" class="btnQuestionario">Adicionar</button>
-                <span class="descricao-kit-questionario">Você ainda pode adicionar produtos</span>
-            </div>
+    // 
+     // Adiciona o atributo display="none"
 
-            
-            
-            
-        </div>
-        
+    // respostas.innerHTML= 
+    // `
+    //     <h3>
+    // `;
 
-        
-
-        <div class="tipoAssinatura" method="post" action="#">
-                
-                <h3>Forma de Assinatura</h3>
-
-                <label class="cateAssinatura">
-                <input type="radio" required name="plano" checked> Mensal - R$100,00 (Recomendado)</label>
-                
-                <label class="cateAssinatura">
-                <input type="radio" required name="plano"> Trimestral - R$250,00
-                </label>
-        </div>
-        
-        <button  class="btnQuestionario">Assinar</button>
-
-    `;
-
-    pergunta.innerText = "Kit Aromaterapia"
+   
 }
 
 function adicionarProdutos() {
