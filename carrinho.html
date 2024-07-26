@@ -17,7 +17,7 @@
 </head>
 
 <body>
-     <header>
+    <header>
         <nav class="navbar">
             <button class="menu-toggle" id="menuToggle">
                 <ion-icon name="menu"></ion-icon>
@@ -34,12 +34,18 @@
                     </div>
                     <span id="span-nome">Nome sobrenome</span>
                     <li class="menu-list"><a href="index.html"><i class="fa-solid fa-house"></i>Inicio</a></li>
-                    <li class="menu-list"><a href="questionario.html"><ion-icon name="newspaper-sharp"></ion-icon>Questionario</a></li>
-                    <li class="menu-list"><a href="assinaturas.html"><ion-icon name="star-sharp"></ion-icon>Minhas assinaturas</a></li>
-                    <li class="menu-list"><a href="diario.html"><ion-icon name="happy-sharp"></ion-icon>Meu humor</a></li>
-                    <li class="menu-list"><a href="indicacoes.html"><ion-icon name="flame"></ion-icon>Indicações</a></li>
-                    <li class="menu-list"><a href="configuracoes.html"><ion-icon name="cog"></ion-icon>Configurações</a></li>
-                    <li class="menu-list"><a href="termos.html"><ion-icon name="lock-closed"></ion-icon>Termos de privacidade</a></li>
+                    <li class="menu-list"><a href="questionario.html"><ion-icon
+                                name="newspaper-sharp"></ion-icon>Questionario</a></li>
+                    <li class="menu-list"><a href="assinaturas.html"><ion-icon name="star-sharp"></ion-icon>Minhas
+                            assinaturas</a></li>
+                    <li class="menu-list"><a href="diario.html"><ion-icon name="happy-sharp"></ion-icon>Meu humor</a>
+                    </li>
+                    <li class="menu-list"><a href="indicacoes.html"><ion-icon name="flame"></ion-icon>Indicações</a>
+                    </li>
+                    <li class="menu-list"><a href="configuracoes.html"><ion-icon name="cog"></ion-icon>Configurações</a>
+                    </li>
+                    <li class="menu-list"><a href="termos.html"><ion-icon name="lock-closed"></ion-icon>Termos de
+                            privacidade</a></li>
                     <li class="menu-list"><a href="#"><ion-icon name="exit-outline"></ion-icon>Sair</a></li>
                 </ul>
             </div>
@@ -52,84 +58,107 @@
         </div>
     </header>
 
-    <div class="product-card-container">
+    <main class="conteudo-questionario">
+        <h2>Seu kit está pronto!</h2>
+        <p>Tratamento escolhido: <span id="tratamentoEscolhido">Aromaterapia</span></p>
 
-        <hr class="separador-carrinho">
 
-        <div class="product-card" id="card1">
+        <div class="product-card-container">
 
-            <div class="logo-card">
-                <img src="assets/img/logo.png" alt="logo">
+            <hr class="separador-carrinho">
 
-                <i class='bx bxs-trash-alt'></i>
-            </div>
+            <div class="product-card" id="card1">
 
-            <div class="main-images">
-                <img id="main-img1-card1" class="main-img active" src="assets/img/imagem8.jpeg" alt="img1">
-                <img id="main-img2-card1" class="main-img" src="assets/img/imagem12.jpeg" alt="img2">
-                <img id="main-img3-card1" class="main-img" src="assets/img/imagem7.jpeg" alt="img3">
-                <span class="product-details">
-                    <h3>Produto1</h3>
-                    <p>Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                </span>
-            </div>
+                <div class="logo-card">
+                    <img src="assets/img/logo.png" alt="logo">
 
-            <hr class="card-line">
+                    <i class='bx bxs-trash-alt'></i>
+                </div>
 
-            <div class="change-product">
-                <div class="options-product">
-                    <span>Outras opções:</span>
-                    <div class="img-options">
-                        <img class="option active" data-target="main-img1-card1" src="assets/img/imagem8.jpeg"
-                            alt="imagem de opções" data-title="Produto1"
-                            data-description="Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.">
-                        <img class="option" data-target="main-img2-card1" src="assets/img/imagem12.jpeg"
-                            alt="imagem de opções" data-title="Produto2"
-                            data-description="Detalhes do meu segundo produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
-                        <img class="option" data-target="main-img3-card1" src="assets/img/imagem7.jpeg"
-                            alt="imagem de opções" data-title="Produto3"
-                            data-description="Detalhes do meu terceiro produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
+                <div class="main-images">
+                    <img id="main-img1-card1" class="main-img active" src="assets/img/imagem8.jpeg" alt="img1">
+                    <img id="main-img2-card1" class="main-img" src="assets/img/imagem12.jpeg" alt="img2">
+                    <img id="main-img3-card1" class="main-img" src="assets/img/imagem7.jpeg" alt="img3">
+                    <span class="product-details">
+                        <h3>Produto1</h3>
+                        <p>Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    </span>
+                </div>
+
+                <hr class="card-line">
+
+                <div class="change-product">
+                    <div class="options-product">
+                        <span>Outras opções:</span>
+                        <div class="img-options">
+                            <img class="option active" data-target="main-img1-card1" src="assets/img/imagem8.jpeg"
+                                alt="imagem de opções" data-title="Produto1"
+                                data-description="Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.">
+                            <img class="option" data-target="main-img2-card1" src="assets/img/imagem12.jpeg"
+                                alt="imagem de opções" data-title="Produto2"
+                                data-description="Detalhes do meu segundo produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
+                            <img class="option" data-target="main-img3-card1" src="assets/img/imagem7.jpeg"
+                                alt="imagem de opções" data-title="Produto3"
+                                data-description="Detalhes do meu terceiro produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <div id="container-button-prod">
+                <span class="descricao-kit-questionario">Você pode adicionar até 5 produtos</span>
+                <button id="addProduto" class="btnQuestionario">Adicionar</button>
+
+            </div>
+
+            <hr class="separador-carrinho">
+
+            <div class="tipoAssinatura" method="post" action="#">
+
+
+                <h3>Forma de Assinatura</h3>
+
+                <label class="cateAssinatura">
+                    <input type="radio" required name="plano" checked> Mensal - R$100,00 </label>
+
+                <label class="cateAssinatura">
+                    <input type="radio" required name="plano"> Trimestral - R$250,00 (Recomendado)
+                </label>
+
+
+            </div>
+
+            <hr class="separador-carrinho">
+
+            <div class="infoPessoais">
+                <h3>Dados Pessoais para entrega</h3>
+                <a>
+                    <p>Informe CPF <i class='bx bx-chevron-right'></i></p>
+                    <span class="cpf-carrinho">___.___.___-__</span>
+                </a>
+                
+
+                <a>
+                    <p>Informe CEP <i class='bx bx-chevron-right'></i></p>
+                    <span class="cpf-carrinho">___.___.___-__</span>
+                </a>
+            </div>
+
+            <hr class="separador-carrinho">
+
+            <div class="tipoPagamento">
+                <h3>Forma de Pagamento</h3>
+                <a>
+                    <p>Selecione a forma de pagamento <i class='bx bx-chevron-right'></i></p>
+                    
+                </a>
+            </div>
+
+            <button class="btnQuestionario">Assinar</button>
+
         </div>
 
-        <div id="container-button-prod">
-            <span class="descricao-kit-questionario">Você pode adicionar até 5 produtos</span>
-            <button id="addProduto" class="btnQuestionario">Adicionar</button>
-            
-        </div>
-
-        <hr class="separador-carrinho">
-
-        <div class="tipoAssinatura" method="post" action="#">
-            
-
-            <h3>Forma de Assinatura</h3>
-
-            <label class="cateAssinatura">
-                <input type="radio" required name="plano" checked> Mensal - R$100,00 </label>
-
-            <label class="cateAssinatura">
-                <input type="radio" required name="plano"> Trimestral - R$250,00 (Recomendado)
-            </label>
-
-            
-        </div>
-
-        <hr class="separador-carrinho">
-
-        <div class="tipoPagamento">
-            <h3>Forma de Pagamento</h3>
-            <a>
-                <p>Selecione a forma de pagamento</p>
-                <i class='bx bx-chevron-right'></i>
-            </a>
-        </div>
-
-        <button class="btnQuestionario">Assinar</button>
-
-    </div>
+    </main>
 
     <script>
         // Função para atualizar a imagem principal e os textos

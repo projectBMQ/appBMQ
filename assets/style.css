@@ -391,11 +391,10 @@ form h2 {
 /* Main Questionário */
 .conteudo-questionario{
     font-family: 'Poppins', sans-serif ;
-    /* width: 100%; */
-    padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 /* Container Questionário */
@@ -404,7 +403,6 @@ form h2 {
     width: 100%;
     max-width: 350px;
     background: transparent;
-    /* padding: 0 10px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -487,7 +485,7 @@ form h2 {
 
 .cateAssinatura {
     width: 100%;
-    background-color: #ADC172;
+    background-color: #4C6410;
     color: white;
     padding: 20px 10px;
     display: flex;
@@ -630,25 +628,21 @@ form h2 {
     width: 100%;
 }
 
-.tipoPagamento{
+.tipoPagamento, .infoPessoais{
     width: 100%;
     margin: 10px;
 }
 
-.tipoPagamento a{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    line-height: 40pxa;
+.tipoPagamento a, .infoPessoais a{
     text-decoration: none;
 }
 
-.tipoPagamento span i {
-    font-size: 25px;
-    color: #4C6410;
-    transition: color 0.3s ease;
-    cursor: pointer;
+.cpf-carrinho{
+    width: 100%;
+    /* margin: 10px 0; */
+    color: #33333377;
 }
+
 
 /* Página de Indicações */
 
