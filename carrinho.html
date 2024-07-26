@@ -82,10 +82,10 @@
                 <h3>Forma de Assinatura</h3>
 
                 <label class="cateAssinatura">
-                    <input type="radio" required name="plano" checked> Mensal - R$100,00 </label>
+                    <input type="radio" required name="plano" > Mensal - R$100,00 </label>
 
                 <label class="cateAssinatura">
-                    <input type="radio" required name="plano"> Trimestral - R$250,00 (Recomendado)
+                    <input type="radio" required name="plano" checked> Trimestral - R$250,00 (Recomendado)
                 </label>
 
 
@@ -234,14 +234,23 @@
         }
 
         function updateMainContent(option, parentCard) {
-            let activeImg = parentCard.querySelector(".main-images .active");
-            if (activeImg) {
-                activeImg.classList.remove("active");
-            }
-            parentCard.querySelector(`.main-images #${option.dataset.target}`).classList.add("active");
+            // Remove active class from all main images
+            parentCard.querySelectorAll(".main-images .main-img").forEach(img => {
+                img.classList.remove("active");
+            });
+            // Add active class to the selected main image
+            parentCard.querySelector(`#${option.dataset.target}`).classList.add("active");
 
+            // Update product details
             parentCard.querySelector("h3").textContent = option.dataset.title;
             parentCard.querySelector("p").textContent = option.dataset.description;
+
+            // Remove active class from all options
+            parentCard.querySelectorAll(".img-options .option").forEach(opt => {
+                opt.classList.remove("active");
+            });
+            // Add active class to the selected option
+            option.classList.add("active");
         }
 
         function updateCardCount() {
