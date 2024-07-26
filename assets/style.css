@@ -613,7 +613,7 @@ form h2 {
     cursor: pointer;
 }
 
-.change-product .options-product .active {
+.options-product .img-options .active {
     box-shadow: 0 0 0 4px #fff,
         0 0 0 6px #4c64107e;
 }
