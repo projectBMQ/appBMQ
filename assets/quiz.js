@@ -143,16 +143,6 @@ const saudeMental = [
     }
 ];
 
-const produtos = [
-    {
-        tratamento: "Aromaterapia",
-        produto: [
-            {}
-        ] ,
-    }
-];
-
-
 
 // Declaração de variáveis para o Questionário
 
@@ -165,7 +155,6 @@ const btnAvancar = document.getElementById('seguirQuiz');
 
 
 let contadorPerguntas = 0;
-let scoreFinal = 0;
 let tratamentoSelecionado = "";
 // console.log(respostas)
 
@@ -196,17 +185,19 @@ function escolherTratamento(){
             // Armazena o valor da opção selecionada
             tratamentoSelecionado = tratamento[index].value;
 
-            // console.log(tratamentoSelecionado)
         }        
     }
 
     // identifica o tratamento e armazena o array que contem as perguntas referentes ao tratamento
-    if (tratamentoSelecionado == "Aromaterapia") {
+    if (tratamentoSelecionado === "Aromaterapia") {
         tratamentoSelecionado = aromaterapia;
-    } else if (tratamentoSelecionado == "Cuidados Pessoais") {
+        localStorage.setItem('tratamento', 'Aromaterapia');
+    } else if (tratamentoSelecionado === "Cuidados Pessoais") {
         tratamentoSelecionado = cuidadosPessoais;
+        localStorage.setItem('tratamento', 'Cuidados Pessoais');
     } else {
         tratamentoSelecionado = saudeMental;
+        localStorage.setItem('tratamento', 'Saúde Mental');
     }
 }
 
@@ -218,7 +209,7 @@ function carregarPergunta(){
         respostas.removeChild(respostas.firstChild);
     }
 
-    if(aromaterapia.length == contadorPerguntas){
+    if(tratamentoSelecionado.length == contadorPerguntas){
         //Caso seja a ultima pergunta, ele executa a função mostrar Carrinho e encerra a função atual
         btnAvancar.setAttribute("style", "display:none");
         pergunta.innerText = "Avaliando respostas e montando o seu Kit"
@@ -269,22 +260,5 @@ function carregarPergunta(){
 
 // Função para mostrar o kit de produtos ao final do questionário
 function mostrarCarrinho (){
-
-    
-
     window.location.href = "carrinho.html";
-
-    // 
-     // Adiciona o atributo display="none"
-
-    // respostas.innerHTML= 
-    // `
-    //     <h3>
-    // `;
-
-   
-}
-
-function adicionarProdutos() {
-    
 }
