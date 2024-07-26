@@ -60,50 +60,13 @@
 
     <main class="conteudo-questionario">
         <h2>Seu kit está pronto!</h2>
-        <p>Tratamento escolhido: <span id="tratamentoEscolhido">Aromaterapia</span></p>
 
+        <hr class="separador-carrinho">
+
+        <p>Tratamento escolhido: <span id="tratamentoEscolhido"></span></p>
 
         <div class="product-card-container">
 
-            <hr class="separador-carrinho">
-
-            <div class="product-card" id="card1">
-
-                <div class="logo-card">
-                    <img src="assets/img/logo.png" alt="logo">
-
-                    <i class='bx bxs-trash-alt'></i>
-                </div>
-
-                <div class="main-images">
-                    <img id="main-img1-card1" class="main-img active" src="assets/img/imagem8.jpeg" alt="img1">
-                    <img id="main-img2-card1" class="main-img" src="assets/img/imagem12.jpeg" alt="img2">
-                    <img id="main-img3-card1" class="main-img" src="assets/img/imagem7.jpeg" alt="img3">
-                    <span class="product-details">
-                        <h3>Produto1</h3>
-                        <p>Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                    </span>
-                </div>
-
-                <hr class="card-line">
-
-                <div class="change-product">
-                    <div class="options-product">
-                        <span>Outras opções:</span>
-                        <div class="img-options">
-                            <img class="option active" data-target="main-img1-card1" src="assets/img/imagem8.jpeg"
-                                alt="imagem de opções" data-title="Produto1"
-                                data-description="Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.">
-                            <img class="option" data-target="main-img2-card1" src="assets/img/imagem12.jpeg"
-                                alt="imagem de opções" data-title="Produto2"
-                                data-description="Detalhes do meu segundo produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
-                            <img class="option" data-target="main-img3-card1" src="assets/img/imagem7.jpeg"
-                                alt="imagem de opções" data-title="Produto3"
-                                data-description="Detalhes do meu terceiro produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div id="container-button-prod">
                 <span class="descricao-kit-questionario">Você pode adicionar até 5 produtos</span>
@@ -133,14 +96,19 @@
             <div class="infoPessoais">
                 <h3>Dados Pessoais para entrega</h3>
                 <a>
-                    <p>Informe CPF <i class='bx bx-chevron-right'></i></p>
-                    <span class="cpf-carrinho">___.___.___-__</span>
+                    <span class="cpf-carrinho">
+                        <p>Informe CPF</p>
+                        <p>___.___.___-__</p>
+                    </span>
+                    <i class='bx bx-chevron-right'></i>
                 </a>
-                
-
+                <hr class="card-line">
                 <a>
-                    <p>Informe CEP <i class='bx bx-chevron-right'></i></p>
-                    <span class="cpf-carrinho">___.___.___-__</span>
+                    <span class="cpf-carrinho">
+                        <p>Informe CEP</p>
+                        <p>___.___.___-__</p>
+                    </span>
+                    <i class='bx bx-chevron-right'></i>
                 </a>
             </div>
 
@@ -149,8 +117,8 @@
             <div class="tipoPagamento">
                 <h3>Forma de Pagamento</h3>
                 <a>
-                    <p>Selecione a forma de pagamento <i class='bx bx-chevron-right'></i></p>
-                    
+                    <p>Selecione a forma de pagamento </p>
+                    <i class='bx bx-chevron-right'></i>
                 </a>
             </div>
 
@@ -161,53 +129,21 @@
     </main>
 
     <script>
-        // Função para atualizar a imagem principal e os textos
-        function updateMainContent(option, parentCard) {
-            let activeOption = parentCard.querySelector(".img-options .active");
-            if (activeOption) {
-                activeOption.classList.remove("active");
+         document.addEventListener("DOMContentLoaded", function(){
+            let tratamento = localStorage.getItem("tratamento");
+            console.log(tratamento);
+            document.getElementById("tratamentoEscolhido").textContent = tratamento;
+
+            // Adicionar três cards ao carregar a página
+            for (let i = 1; i <= 3; i++) {
+                createNewCard(`card${i}`);
             }
-            option.classList.add("active");
-
-            let activeImg = parentCard.querySelector(".main-images .active");
-            if (activeImg) {
-                activeImg.classList.remove("active");
-            }
-
-            parentCard.querySelector(`.main-images #${option.dataset.target}`).classList.add("active");
-
-            let title = parentCard.querySelector(".product-details h3");
-            let description = parentCard.querySelector(".product-details p");
-
-            title.textContent = option.dataset.title;
-            description.textContent = option.dataset.description;
-        }
-
-        // Adiciona evento de clique às opções de imagem
-        document.querySelectorAll(".img-options .option").forEach(option => {
-            option.addEventListener("click", (e) => {
-                let parentCard = option.closest(".product-card");
-                updateMainContent(option, parentCard);
-            });
         });
 
-        // Adiciona evento de clique ao ícone de lixeira
-        document.querySelectorAll('.bxs-trash-alt').forEach(icon => {
-            icon.addEventListener('click', (e) => {
-                let parentCard = e.target.closest('.product-card');
-                parentCard.remove();
-                updateCardCount();
-            });
-        });
-
-        // Função para atualizar a contagem de cards
-        function updateCardCount() {
-            const count = document.querySelectorAll('.product-card').length;
-            console.log(`Número de cards: ${count}`);
-        }
-
-        // Função para criar um novo card
         function createNewCard(cardId) {
+            const tratamento = localStorage.getItem("tratamento");
+            const imagens = getImagensTratamento(tratamento);
+
             const cardTemplate = document.createElement('div');
             cardTemplate.classList.add('product-card');
             cardTemplate.id = cardId;
@@ -217,9 +153,10 @@
                     <i class='bx bxs-trash-alt'></i>
                 </div>
                 <div class="main-images">
-                    <img id="main-img1-${cardId}" class="main-img active" src="assets/img/imagem8.jpeg" alt="img1">
-                    <img id="main-img2-${cardId}" class="main-img" src="assets/img/imagem12.jpeg" alt="img2">
-                    <img id="main-img3-${cardId}" class="main-img" src="assets/img/imagem7.jpeg" alt="img3">
+                    <img id="main-img1-${cardId}" class="main-img active" src="${imagens[0]}" alt="img1">
+                    <img id="main-img2-${cardId}" class="main-img" src="${imagens[1]}" alt="img2">
+                    <img id="main-img3-${cardId}" class="main-img" src="${imagens[2]}" alt="img3">
+                    <img id="main-img4-${cardId}" class="main-img" src="${imagens[3]}" alt="img4">
                     <span class="product-details">
                         <h3>Produto1</h3>
                         <p>Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
@@ -230,12 +167,14 @@
                     <div class="options-product">
                         <span>Outras opções:</span>
                         <div class="img-options">
-                            <img class="option active" data-target="main-img1-${cardId}" src="assets/img/imagem8.jpeg"
+                            <img class="option active" data-target="main-img1-${cardId}" src="${imagens[0]}"
                                 alt="imagem de opções" data-title="Produto1" data-description="Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.">
-                            <img class="option" data-target="main-img2-${cardId}" src="assets/img/imagem12.jpeg"
+                            <img class="option" data-target="main-img2-${cardId}" src="${imagens[1]}"
                                 alt="imagem de opções" data-title="Produto2" data-description="Detalhes do meu segundo produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
-                            <img class="option" data-target="main-img3-${cardId}" src="assets/img/imagem7.jpeg"
+                            <img class="option" data-target="main-img3-${cardId}" src="${imagens[2]}"
                                 alt="imagem de opções" data-title="Produto3" data-description="Detalhes do meu terceiro produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
+                            <img class="option" data-target="main-img4-${cardId}" src="${imagens[3]}"
+                                alt="imagem de opções" data-title="Produto4" data-description="Detalhes do meu terceiro produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
                         </div>
                     </div>
                 </div>
@@ -262,6 +201,59 @@
             updateCardCount();
         }
 
+        function getImagensTratamento(tratamento) {
+            const basePath = "assets/img/produtos/";
+            if (tratamento === "Aromaterapia") {
+                return [
+                    `${basePath}aromaterapia01.jpeg`,
+                    `${basePath}aromaterapia02.jpeg`,
+                    `${basePath}aromaterapia03.jpeg`,
+                    `${basePath}aromaterapia04.jpeg`
+                ];
+            } else if (tratamento === "Cuidados Pessoais") {
+                return [
+                    `${basePath}cuidados_pessoais01.jpeg`,
+                    `${basePath}cuidados_pessoais02.jpeg`,
+                    `${basePath}cuidados_pessoais03.jpeg`,
+                    `${basePath}cuidados_pessoais04.jpeg`
+                ];
+            } else if (tratamento === "Saúde Mental") {
+                return [
+                    `${basePath}saude_mental01.jpeg`,
+                    `${basePath}saude_mental02.jpeg`,
+                    `${basePath}saude_mental03.jpeg`,
+                    `${basePath}saude_mental04.jpeg`
+                ];
+            }
+            return [
+                `${basePath}default1.jpeg`,
+                `${basePath}default2.jpeg`,
+                `${basePath}default3.jpeg`,
+                `${basePath}default4.jpeg`
+            ];
+        }
+
+        function updateMainContent(option, parentCard) {
+            let activeImg = parentCard.querySelector(".main-images .active");
+            if (activeImg) {
+                activeImg.classList.remove("active");
+            }
+            parentCard.querySelector(`.main-images #${option.dataset.target}`).classList.add("active");
+
+            parentCard.querySelector("h3").textContent = option.dataset.title;
+            parentCard.querySelector("p").textContent = option.dataset.description;
+        }
+
+        function updateCardCount() {
+            const cardCount = document.querySelectorAll('.product-card').length;
+            if (cardCount >= 5) {
+                document.getElementById('addProduto').disabled = true;
+            } else {
+                document.getElementById('addProduto').disabled = false;
+            }
+            console.log(`Número de cards: ${cardCount}`);
+        }
+
         // Adiciona evento de clique ao botão de adicionar
         document.getElementById('addProduto').addEventListener('click', () => {
             const count = document.querySelectorAll('.product-card').length;
@@ -273,6 +265,7 @@
         });
 
         updateCardCount();
+
     </script>
 </body>
 
