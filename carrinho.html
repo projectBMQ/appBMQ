@@ -69,7 +69,7 @@
 
 
             <div id="container-button-prod">
-                <span class="descricao-kit-questionario">Você pode adicionar até 5 produtos</span>
+                <span class="aviso-carrinho">Você pode adicionar até 5 produtos</span>
                 <button id="addProduto" class="btnQuestionario">Adicionar</button>
 
             </div>
@@ -82,7 +82,7 @@
                 <h3>Forma de Assinatura</h3>
 
                 <label class="cateAssinatura">
-                    <input type="radio" required name="plano" > Mensal - R$100,00 </label>
+                    <input type="radio" required name="plano"> Mensal - R$100,00 </label>
 
                 <label class="cateAssinatura">
                     <input type="radio" required name="plano" checked> Trimestral - R$250,00 (Recomendado)
@@ -129,21 +129,30 @@
     </main>
 
     <script>
-         document.addEventListener("DOMContentLoaded", function(){
+        document.addEventListener("DOMContentLoaded", function () {
             let tratamento = localStorage.getItem("tratamento");
             console.log(tratamento);
             document.getElementById("tratamentoEscolhido").textContent = tratamento;
-
+    
             // Adicionar três cards ao carregar a página
             for (let i = 1; i <= 3; i++) {
                 createNewCard(`card${i}`);
             }
+    
+            // Atualiza a contagem de cards ao carregar a página
+            updateCardCount();
         });
-
+    
+        let lastActiveImageIndex = 0;
+    
         function createNewCard(cardId) {
             const tratamento = localStorage.getItem("tratamento");
             const imagens = getImagensTratamento(tratamento);
-
+    
+            // Determine o índice da próxima imagem principal a ser usada
+            const mainImageIndex = lastActiveImageIndex % imagens.length;
+            lastActiveImageIndex++;
+    
             const cardTemplate = document.createElement('div');
             cardTemplate.classList.add('product-card');
             cardTemplate.id = cardId;
@@ -153,10 +162,10 @@
                     <i class='bx bxs-trash-alt'></i>
                 </div>
                 <div class="main-images">
-                    <img id="main-img1-${cardId}" class="main-img active" src="${imagens[0]}" alt="img1">
-                    <img id="main-img2-${cardId}" class="main-img" src="${imagens[1]}" alt="img2">
-                    <img id="main-img3-${cardId}" class="main-img" src="${imagens[2]}" alt="img3">
-                    <img id="main-img4-${cardId}" class="main-img" src="${imagens[3]}" alt="img4">
+                    <img id="main-img1-${cardId}" class="main-img ${mainImageIndex === 0 ? 'active' : ''}" src="${imagens[0]}" alt="img1">
+                    <img id="main-img2-${cardId}" class="main-img ${mainImageIndex === 1 ? 'active' : ''}" src="${imagens[1]}" alt="img2">
+                    <img id="main-img3-${cardId}" class="main-img ${mainImageIndex === 2 ? 'active' : ''}" src="${imagens[2]}" alt="img3">
+                    <img id="main-img4-${cardId}" class="main-img ${mainImageIndex === 3 ? 'active' : ''}" src="${imagens[3]}" alt="img4">
                     <span class="product-details">
                         <h3>Produto1</h3>
                         <p>Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
@@ -167,13 +176,13 @@
                     <div class="options-product">
                         <span>Outras opções:</span>
                         <div class="img-options">
-                            <img class="option active" data-target="main-img1-${cardId}" src="${imagens[0]}"
+                            <img class="option ${mainImageIndex === 0 ? 'active' : ''}" data-target="main-img1-${cardId}" src="${imagens[0]}"
                                 alt="imagem de opções" data-title="Produto1" data-description="Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.">
-                            <img class="option" data-target="main-img2-${cardId}" src="${imagens[1]}"
+                            <img class="option ${mainImageIndex === 1 ? 'active' : ''}" data-target="main-img2-${cardId}" src="${imagens[1]}"
                                 alt="imagem de opções" data-title="Produto2" data-description="Detalhes do meu segundo produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
-                            <img class="option" data-target="main-img3-${cardId}" src="${imagens[2]}"
+                            <img class="option ${mainImageIndex === 2 ? 'active' : ''}" data-target="main-img3-${cardId}" src="${imagens[2]}"
                                 alt="imagem de opções" data-title="Produto3" data-description="Detalhes do meu terceiro produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
-                            <img class="option" data-target="main-img4-${cardId}" src="${imagens[3]}"
+                            <img class="option ${mainImageIndex === 3 ? 'active' : ''}" data-target="main-img4-${cardId}" src="${imagens[3]}"
                                 alt="imagem de opções" data-title="Produto4" data-description="Detalhes do meu terceiro produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
                         </div>
                     </div>
@@ -182,7 +191,7 @@
             const container = document.querySelector('.product-card-container');
             const buttonContainer = document.getElementById('container-button-prod');
             container.insertBefore(cardTemplate, buttonContainer);
-
+    
             // Adiciona eventos ao novo card
             const newCard = document.getElementById(cardId);
             newCard.querySelectorAll(".img-options .option").forEach(option => {
@@ -191,16 +200,16 @@
                     updateMainContent(option, parentCard);
                 });
             });
-
+    
             newCard.querySelector('.bxs-trash-alt').addEventListener('click', (e) => {
                 let parentCard = e.target.closest('.product-card');
                 parentCard.remove();
                 updateCardCount();
             });
-
+    
             updateCardCount();
         }
-
+    
         function getImagensTratamento(tratamento) {
             const basePath = "assets/img/produtos/";
             if (tratamento === "Aromaterapia") {
@@ -232,7 +241,7 @@
                 `${basePath}default4.jpeg`
             ];
         }
-
+    
         function updateMainContent(option, parentCard) {
             // Remove active class from all main images
             parentCard.querySelectorAll(".main-images .main-img").forEach(img => {
@@ -240,11 +249,11 @@
             });
             // Add active class to the selected main image
             parentCard.querySelector(`#${option.dataset.target}`).classList.add("active");
-
+    
             // Update product details
             parentCard.querySelector("h3").textContent = option.dataset.title;
             parentCard.querySelector("p").textContent = option.dataset.description;
-
+    
             // Remove active class from all options
             parentCard.querySelectorAll(".img-options .option").forEach(opt => {
                 opt.classList.remove("active");
@@ -252,17 +261,29 @@
             // Add active class to the selected option
             option.classList.add("active");
         }
-
+    
         function updateCardCount() {
             const cardCount = document.querySelectorAll('.product-card').length;
+            let avisoCarrinho = document.querySelectorAll('.aviso-carrinho')
+
             if (cardCount >= 5) {
                 document.getElementById('addProduto').disabled = true;
+                avisoCarrinho.forEach(aviso => {
+                    aviso.textContent = "Você atingiu o limite de produtos adicionados.";
+                });
             } else {
                 document.getElementById('addProduto').disabled = false;
+                avisoCarrinho.forEach(aviso => {
+                    aviso.textContent = `Você pode adicionar até 5 produtos. (${cardCount} de 5)`;
+                });
+                
             }
-            console.log(`Número de cards: ${cardCount}`);
+            console.log(`Número de cards: ${cardCount} de 5`);
+            
         }
 
+        
+    
         // Adiciona evento de clique ao botão de adicionar
         document.getElementById('addProduto').addEventListener('click', () => {
             const count = document.querySelectorAll('.product-card').length;
@@ -270,12 +291,11 @@
                 createNewCard(`card${count + 1}`);
             } else {
                 alert("Você só pode adicionar no máximo 5 produtos.");
+                
             }
         });
-
-        updateCardCount();
-
     </script>
+    
 </body>
 
 </html>
