@@ -68,10 +68,15 @@
                     <input type="checkbox" name="tratamento" value="Saúde Mental">
                     <span>Saúde Mental</span>
                 </label>
+                
             </form>
 
-            <button id="comecarQuiz" class="btnQuestionario">COMEÇAR</button>
-            <button id="seguirQuiz" style="display: none;" class="btnQuestionario" >Próxima</button>
+            <form id="termos">
+                <label for="termos"><input type="checkbox" name="termos" required> Aceitar termos e condições! <a href="assets/LGPD.docx.pdf" download="LGPD.pdf">Saiba mais!</a></label>
+            </form>
+
+            <button id="comecarQuiz" class="btnQuestionario" disabled>COMEÇAR</button>
+            <button id="seguirQuiz" style="display: none;" class="btnQuestionario" disabled>Próxima</button>
 
         </div>
 
@@ -82,5 +87,49 @@
     
     <script src="assets/quiz.js" type="module"></script>
     <script src="assets/script.js" type="module"></script>
+
+    <script>
+        // Função para verificar se ambas as condições foram atendidas
+        function verificarCondicoes() {
+            const tratamentoSelecionado = document.querySelector('#respostas input[type="checkbox"]:checked');
+            const termosAceitos = document.querySelector('#termos input[name="termos"]').checked;
+            const botaoComecar = document.getElementById('comecarQuiz');
+            
+            if (tratamentoSelecionado && termosAceitos) {
+                botaoComecar.removeAttribute('disabled');
+            } else {
+                botaoComecar.setAttribute('disabled', 'disabled');
+            }
+        }
+
+        // Adicionar eventos de mudança aos checkboxes de tratamento
+        document.querySelectorAll('#respostas input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                document.querySelectorAll('#respostas input[type="checkbox"]').forEach(box => {
+                    box.checked = false;
+                });
+                this.checked = true;
+                verificarCondicoes();
+            });
+        });
+
+        // Adicionar evento de mudança ao checkbox de termos
+        document.querySelector('#termos input[name="termos"]').addEventListener('change', verificarCondicoes);
+
+        // Adicionar evento de clique ao botão "COMEÇAR"
+        document.getElementById('comecarQuiz').addEventListener('click', function(event) {
+            const tratamentoSelecionado = document.querySelector('#respostas input[type="checkbox"]:checked');
+            const termosAceitos = document.querySelector('#termos input[name="termos"]').checked;
+
+            if (!tratamentoSelecionado || !termosAceitos) {
+                event.stopImmediatePropagation(); // Impede o comportamento padrão do botão
+                alert('Por favor, selecione uma opção de tratamento e aceite os termos para continuar.');
+            } else {
+                // Prossiga com a ação desejada, por exemplo, enviar o formulário ou redirecionar para outra página
+                console.log('Tratamento selecionado:', tratamentoSelecionado.value);
+                console.log('Termos aceitos:', termosAceitos);
+            }
+        });
+    </script>
 </body>
 </html>
