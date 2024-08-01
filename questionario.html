@@ -126,8 +126,7 @@
                 alert('Por favor, selecione uma opção de tratamento e aceite os termos para continuar.');
             } else {
                 // Prossiga com a ação desejada, por exemplo, enviar o formulário ou redirecionar para outra página
-                console.log('Tratamento selecionado:', tratamentoSelecionado.value);
-                console.log('Termos aceitos:', termosAceitos);
+                document.getElementById('termos').style.display = "none";
             }
         });
     </script>
