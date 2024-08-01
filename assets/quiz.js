@@ -221,7 +221,6 @@ function carregarPergunta(){
 
     // Função para ler as respostas referente a cada pergunta por meio de um forEach
     // Depois cria os elementos que conterão o conteúdo desse array
-    // tratamento[posição].informação.lerTudo
     tratamentoSelecionado[contadorPerguntas].respostas.forEach(resposta =>{
         const novaResposta = document.createElement("label") //Cria um novo elemento(tag) do tipo label
         novaResposta.classList.add("alternativas") // Adiciona uma classe
@@ -253,6 +252,19 @@ function carregarPergunta(){
         novaResposta.appendChild(spanResposta); //atribue spanResposta como filho de novaResposta
 
         respostas.appendChild(novaResposta); //atribue novaResposta como filho de respostas(containerPrincipal)
+
+        document.querySelectorAll('#respostas input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                // Desmarca todas as checkboxes
+                document.querySelectorAll('#respostas input[type="checkbox"]').forEach(box => {
+                    box.checked = false;
+
+                });
+                // Marca apenas a checkbox clicada
+                this.checked = true;
+                document.getElementById("seguirQuiz").removeAttribute("disabled");
+            });
+        });
 
     })
     

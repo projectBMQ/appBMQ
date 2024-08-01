@@ -536,7 +536,7 @@ form h2 {
 }
 
 .product-card .logo-card i {
-    font-size: 25px;
+    font-size: 20px;
     color: #4C6410;
     transition: color 0.3s ease;
     cursor: pointer;
@@ -557,6 +557,7 @@ form h2 {
     max-width: 100px;
     width: 100%;
     height: 150px;
+    border-radius: 10px;
     display: none;
     transition: opacity 0.5s ease;
 }
@@ -633,6 +634,20 @@ form h2 {
 .tipoPagamento, .infoPessoais{
     width: 100%;
     margin: 10px;
+    color: rgb(33, 33, 33);
+    h3{
+        font-size: .9em;
+    }
+
+    p{
+        font-size: 1em;
+    }
+
+    i{
+        color: rgb(33, 33, 33);
+        font-size: 1.5em;
+        font-weight: bold;
+    }
 }
 
 .tipoPagamento a, .infoPessoais a{
@@ -648,13 +663,19 @@ form h2 {
     gap: 15px;
 }
 
-.tipoPagamento i, .infoPessoais i{
-    font-size: 1.7em;
-    color: #4C6410;
-}
-
 .cpf-carrinho{
     width: 100%;
+}
+
+.btnCarrinho{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 101;
+    bottom: 0;
+    padding: 10px 0;
 }
 
 
