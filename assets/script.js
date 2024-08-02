@@ -58,8 +58,7 @@ document.addEventListener('click', function(event) {
 });
 
 
-// Validação de cadastro dos usuarios 
-document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+document.getElementById('cadastro-form').addEventListener('submit', function(event) {
     event.preventDefault();
 
     const nome = event.target.nome.value.trim();
@@ -67,10 +66,11 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
     const telefone = event.target.telefone.value.trim();
     const senha = event.target.senha.value.trim();
     const confirmacaoSenha = event.target.confirmacao_senha.value.trim();
+    const termos = event.target.termos.checked;
 
     // Validação de campos obrigatórios
-    if (!nome || !email || !telefone || !senha || !confirmacaoSenha) {
-        alert('Por favor, preencha todos os campos obrigatórios.');
+    if (!nome || !email || !telefone || !senha || !confirmacaoSenha || !termos) {
+        alert('Por favor, preencha todos os campos obrigatórios e aceite os termos e condições.');
         return;
     }
 
@@ -80,7 +80,7 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
         return;
     }
 
-    // Validação de número de telefone (exemplo simples)
+    // Validação de número de telefone
     if (!validatePhoneNumber(telefone)) {
         alert('Por favor, insira um número de telefone válido.');
         return;
@@ -95,10 +95,11 @@ document.getElementById('cadastroForm').addEventListener('submit', function(even
     // Exibir mensagem de sucesso
     document.getElementById('successMessage').classList.remove('hidden');
 
-    // Resetar formulário após um breve atraso
+    // Redirecionar para a página de perfil após um breve atraso
     setTimeout(() => {
-        document.getElementById('cadastroForm').reset();
+        document.getElementById('cadastro-form').reset();
         document.getElementById('successMessage').classList.add('hidden');
+        window.location.href = "perfil.html";
     }, 3000);
 });
 

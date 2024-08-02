@@ -516,9 +516,13 @@ form h2 {
     background-color: #4C6410;
   }
 
+  .questionario #termos{
+    text-align: justify;
+  }
+
   #termos{
     margin: 15px 0;
-    font-size: .9em;
+    font-size: .8em;
   }
 
 /* Página de Carrinho */
