@@ -33,7 +33,6 @@
                 <li class="menu-list"><a href="assinaturas.html"><ion-icon name="star-sharp"></ion-icon>Minhas assinaturas</a></li>
                 <li class="menu-list"><a href="diario.html"><ion-icon name="happy-sharp"></ion-icon>Meu humor</a></li>
                 <li class="menu-list"><a href="indicacoes.html"><ion-icon name="flame"></ion-icon>Indicações</a></li>
-                <li class="menu-list"><a href="configuracoes.html"><ion-icon name="cog"></ion-icon>Configurações</a></li>
                 <li class="menu-list"><a href="termos.html"><ion-icon name="lock-closed"></ion-icon>Termos de privacidade</a></li>
                 <li class="menu-list"><a href="#"><ion-icon name="exit-outline"></ion-icon>Sair</a></li>
             </ul>
@@ -48,7 +47,7 @@
 </header>
 <main>
     <figure class="login-img">
-        <img src="imgs/logo.png" alt="logo">
+        <img src="assets/img/logo.png" alt="logo">
     </figure>
     <h4 class="bem-vindo">SEJA BEM-VINDO!</h4>
     <div class="login-container">
@@ -61,7 +60,7 @@
                 <ion-icon name="lock-closed-outline"></ion-icon>
                 <input type="password" id="password" class="input-field" placeholder="Sua senha" required>
             </div>
-            <button type="submit" class="login-button">ENTRAR</button>
+            <button type="submit" class="login-button" onclick="openPerfil()">ENTRAR</button>
             <div class="links">
                 <a href="#" class="forgot-password">ESQUECEU SUA SENHA?</a>
                 <p class="texto-register">AINDA NÃO POSSUI CONTA?</p>
@@ -74,6 +73,13 @@
 
 </footer>
 <script src="assets/script.js"></script>
+
+<script>
+
+    function openPerfil(){
+        window.location.href = "perfil.html";
+    }
+</script>
 </body>
 
 </html>

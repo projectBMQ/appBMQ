@@ -35,7 +35,6 @@
                     <li class="menu-list"><a href="assinaturas.html"><ion-icon name="star-sharp"></ion-icon>Minhas assinaturas</a></li>
                     <li class="menu-list"><a href="diario.html"><ion-icon name="happy-sharp"></ion-icon>Meu humor</a></li>
                     <li class="menu-list"><a href="indicacoes.html"><ion-icon name="flame"></ion-icon>Indicações</a></li>
-                    <li class="menu-list"><a href="configuracoes.html"><ion-icon name="cog"></ion-icon>Configurações</a></li>
                     <li class="menu-list"><a href="termos.html"><ion-icon name="lock-closed"></ion-icon>Termos de privacidade</a></li>
                     <li class="menu-list"><a href="#"><ion-icon name="exit-outline"></ion-icon>Sair</a></li>
                 </ul>
@@ -83,7 +82,7 @@
                     <div class="input-group senha-grupo">
                         <input type="password" placeholder="Confirmação de Senha" id="confirmacao-senha">
                     </div>
-                    <button type="submit" id="criar-conta">Criar Conta</button>
+                    <button  id="criar-conta" onclick="openPerfil()">Criar Conta</button>
                 </form>
             </div>
         </div>
@@ -92,6 +91,11 @@
         </div>
     </main>
     <script src="assets/script.js"></script>
+    <script>
+        function openPerfil(){
+            window.location.href = "perfil.html";
+        }
+    </script>
 </body>
 
 </html>
