@@ -53,49 +53,52 @@
                 <form id="cadastro-form">
                     <h2>Cadastro</h2>
                     <div class="input-group">
-                        <input type="text" placeholder="Nome e Sobrenome" id="nome">
+                        <input type="text" placeholder="Nome e Sobrenome" id="nome" name="nome">
                     </div>
                     <div class="input-group">
-                        <input type="email" placeholder="E-mail" id="email">
+                        <input type="email" placeholder="E-mail" id="email" name="email">
                     </div>
                     <div class="input-group">
-                        <input type="text" placeholder="Telefone" id="telefone">
+                        <input type="text" placeholder="Telefone" id="telefone" name="telefone">
                     </div>
                     <div class="input-pair">
-                        <input type="text" placeholder="Endereço" id="endereco">
-                        <input type="text" placeholder="Nº" id="numero">
+                        <input type="text" placeholder="Endereço" id="endereco" name="endereco">
+                        <input type="text" placeholder="Nº" id="numero" name="numero">
                     </div>
                     <div class="input-pair">
-                        <input type="text" placeholder="CEP" id="cep">
-                        <input type="text" placeholder="Bairro" id="bairro">
+                        <input type="text" placeholder="CEP" id="cep" name="cep">
+                        <input type="text" placeholder="Bairro" id="bairro" name="bairro">
                     </div>
                     <div class="input-pair">
-                        <input type="text" placeholder="Cidade" id="cidade">
-                        <input type="text" placeholder="UF" id="uf">
+                        <input type="text" placeholder="Cidade" id="cidade" name="cidade">
+                        <input type="text" placeholder="UF" id="uf" name="uf">
                     </div>
                     <div class="input-group">
-                        <input type="text" placeholder="Complemento" id="complemento">
+                        <input type="text" placeholder="Complemento" id="complemento" name="complemento">
                     </div>
                     <div class="input-group senha-grupo">
-                        <input type="password" placeholder="Senha" id="senha">
+                        <input type="password" placeholder="Senha" id="senha" name="senha">
                     </div>
                     <div class="input-group senha-grupo">
-                        <input type="password" placeholder="Confirmação de Senha" id="confirmacao-senha">
+                        <input type="password" placeholder="Confirmação de Senha" id="confirmacao-senha" name="confirmacao_senha">
                     </div>
-                    <button  id="criar-conta" onclick="openPerfil()">Criar Conta</button>
+                    <div id="termos">
+                        <label for="termos" >
+                            <input type="checkbox"  name="termos" required> Aceitar termos e condições! 
+                            <a href="assets/LGPD.docx.pdf" download="LGPD.pdf">Saiba mais!</a>
+                        </label>
+                    </div>
+                    <button type="submit" id="criar-conta">Criar Conta</button>
                 </form>
+                <div id="successMessage" class="hidden">
+                    Conta criada com sucesso!
+                </div>
             </div>
+            
         </div>
-        <div id="successMessage" class="hidden">
-            Conta criada com sucesso!
-        </div>
+        
     </main>
     <script src="assets/script.js"></script>
-    <script>
-        function openPerfil(){
-            window.location.href = "perfil.html";
-        }
-    </script>
 </body>
 
 </html>
