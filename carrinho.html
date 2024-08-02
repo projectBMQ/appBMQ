@@ -138,6 +138,7 @@
         });
     
         let lastActiveImageIndex = 0;
+        let contProd = 1;
     
         function createNewCard(cardId) {
             const tratamento = localStorage.getItem("tratamento");
@@ -146,7 +147,7 @@
             // Determine o índice da próxima imagem principal a ser usada
             const mainImageIndex = lastActiveImageIndex % imagens.length;
             lastActiveImageIndex++;
-    
+
             const cardTemplate = document.createElement('div');
             cardTemplate.classList.add('product-card');
             cardTemplate.id = cardId;
@@ -164,6 +165,11 @@
                     <span class="product-details">
                         <h3>Produto1</h3>
                         <p>Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                        <div class="quantidade-prod">
+                            <span class="reduzir-prod">-</span> 
+                            <span class="contador-prod">${contProd}</span> 
+                            <span class="aumentar-prod">+</span>
+                        </div>
                     </span>
                 </div>
                 <hr class="card-line">
@@ -200,6 +206,20 @@
                 let parentCard = e.target.closest('.product-card');
                 parentCard.remove();
                 updateCardCount();
+            });
+    
+            newCard.querySelector('.aumentar-prod').addEventListener('click', (e) => {
+                let parentCard = e.target.closest('.product-card');
+                let contador = parentCard.querySelector('.contador-prod');
+                contador.textContent = parseInt(contador.textContent) + 1;
+            });
+    
+            newCard.querySelector('.reduzir-prod').addEventListener('click', (e) => {
+                let parentCard = e.target.closest('.product-card');
+                let contador = parentCard.querySelector('.contador-prod');
+                if (parseInt(contador.textContent) > 1) {
+                    contador.textContent = parseInt(contador.textContent) - 1;
+                }
             });
     
             updateCardCount();
@@ -259,7 +279,7 @@
     
         function updateCardCount() {
             const cardCount = document.querySelectorAll('.product-card').length;
-            let avisoCarrinho = document.querySelectorAll('.aviso-carrinho')
+            let avisoCarrinho = document.querySelectorAll('.aviso-carrinho');
 
             if (cardCount >= 5) {
                 document.getElementById('addProduto').disabled = true;
@@ -271,14 +291,10 @@
                 avisoCarrinho.forEach(aviso => {
                     aviso.textContent = `Você pode adicionar até 5 produtos. (${cardCount} de 5)`;
                 });
-                
             }
             console.log(`Número de cards: ${cardCount} de 5`);
-            
         }
 
-        
-    
         // Adiciona evento de clique ao botão de adicionar
         document.getElementById('addProduto').addEventListener('click', () => {
             const count = document.querySelectorAll('.product-card').length;
@@ -286,7 +302,6 @@
                 createNewCard(`card${count + 1}`);
             } else {
                 alert("Você só pode adicionar no máximo 5 produtos.");
-                
             }
         });
     </script>
