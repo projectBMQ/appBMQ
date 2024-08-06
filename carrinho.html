@@ -13,7 +13,6 @@
     <!-- Link para a biblioteca de ICONS-->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
 </head>
 
 <body>
@@ -64,29 +63,20 @@
         <p>Tratamento escolhido: <span id="tratamentoEscolhido"></span></p>
 
         <div class="product-card-container">
-
-
             <div id="container-button-prod">
                 <span class="aviso-carrinho">Você pode adicionar até 5 produtos</span>
                 <button id="addProduto" class="btnQuestionario">Adicionar</button>
-
             </div>
 
             <hr class="separador-carrinho">
 
             <div class="tipoAssinatura" method="post" action="#">
-
-
                 <h3>Forma de Assinatura</h3>
-
                 <label class="cateAssinatura">
                     <input type="radio" required name="plano"> Mensal - R$89,90 </label>
-
                 <label class="cateAssinatura">
                     <input type="radio" required name="plano" checked> Trimestral - R$199,90 (Recomendado)
                 </label>
-
-
             </div>
 
             <hr class="separador-carrinho">
@@ -114,34 +104,31 @@
 
             <hr class="separador-carrinho">
 
-            <div class="btnCarrinho"><button class="btnQuestionario">Assinar</button></div>
-
+            <div class="btnCarrinho"><button class="btnQuestionario" id="finalizar-compra">Assinar</button></div>
         </div>
-
     </main>
 
     <script>
+        let totalQuantity = 0;
+        let lastActiveImageIndex = 0;
+
         document.addEventListener("DOMContentLoaded", function () {
             let tratamento = localStorage.getItem("tratamento");
-            console.log(tratamento);
             document.getElementById("tratamentoEscolhido").textContent = tratamento;
-    
-            // Adicionar três cards ao carregar a página
+
+            // Adicionar cinco cards ao carregar a página
             for (let i = 1; i <= 5; i++) {
                 createNewCard(`card${i}`);
             }
-    
+
             // Atualiza a contagem de cards ao carregar a página
             updateCardCount();
         });
-    
-        let lastActiveImageIndex = 0;
-        let contProd = 1;
-    
+
         function createNewCard(cardId) {
             const tratamento = localStorage.getItem("tratamento");
             const imagens = getImagensTratamento(tratamento);
-    
+
             // Determine o índice da próxima imagem principal a ser usada
             const mainImageIndex = lastActiveImageIndex % imagens.length;
             lastActiveImageIndex++;
@@ -160,12 +147,13 @@
                     <img id="main-img2-${cardId}" class="main-img ${mainImageIndex === 1 ? 'active' : ''}" src="${imagens[1]}" alt="img2">
                     <img id="main-img3-${cardId}" class="main-img ${mainImageIndex === 2 ? 'active' : ''}" src="${imagens[2]}" alt="img3">
                     <img id="main-img4-${cardId}" class="main-img ${mainImageIndex === 3 ? 'active' : ''}" src="${imagens[3]}" alt="img4">
+                    <img id="main-img5-${cardId}" class="main-img ${mainImageIndex === 4 ? 'active' : ''}" src="${imagens[4]}" alt="img5">
                     <span class="product-details">
-                        <h3>Produto1</h3>
+                        <h3>${mainImageIndex === 4 ? 'Produto5' : `Produto${mainImageIndex + 1}`}</h3>
                         <p>Detalhes do meu pequeno teste Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                         <div class="quantidade-prod">
                             <span class="reduzir-prod">-</span> 
-                            <span class="contador-prod">${contProd}</span> 
+                            <span class="contador-prod">1</span> 
                             <span class="aumentar-prod">+</span>
                         </div>
                     </span>
@@ -182,7 +170,9 @@
                             <img class="option ${mainImageIndex === 2 ? 'active' : ''}" data-target="main-img3-${cardId}" src="${imagens[2]}"
                                 alt="imagem de opções" data-title="Produto3" data-description="Detalhes do meu terceiro produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
                             <img class="option ${mainImageIndex === 3 ? 'active' : ''}" data-target="main-img4-${cardId}" src="${imagens[3]}"
-                                alt="imagem de opções" data-title="Produto4" data-description="Detalhes do meu terceiro produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
+                                alt="imagem de opções" data-title="Produto4" data-description="Detalhes do meu quarto produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
+                            <img class="option ${mainImageIndex === 4 ? 'active' : ''}" data-target="main-img5-${cardId}" src="${imagens[4]}"
+                                alt="imagem de opções" data-title="Produto5" data-description="Detalhes do meu quinto produto Lorem ipsum dolor sit amet, consectetur adipisicing elit.">
                         </div>
                     </div>
                 </div>
@@ -190,7 +180,7 @@
             const container = document.querySelector('.product-card-container');
             const buttonContainer = document.getElementById('container-button-prod');
             container.insertBefore(cardTemplate, buttonContainer);
-    
+
             // Adiciona eventos ao novo card
             const newCard = document.getElementById(cardId);
             newCard.querySelectorAll(".img-options .option").forEach(option => {
@@ -199,30 +189,37 @@
                     updateMainContent(option, parentCard);
                 });
             });
-    
+
             newCard.querySelector('.bxs-trash-alt').addEventListener('click', (e) => {
                 let parentCard = e.target.closest('.product-card');
                 parentCard.remove();
                 updateCardCount();
             });
-    
+
             newCard.querySelector('.aumentar-prod').addEventListener('click', (e) => {
                 let parentCard = e.target.closest('.product-card');
                 let contador = parentCard.querySelector('.contador-prod');
-                contador.textContent = parseInt(contador.textContent) + 1;
+                if (updateTotalQuantity() < 5) {
+                    contador.textContent = parseInt(contador.textContent) + 1;
+                    updateTotalQuantity();
+                    updateCardCount();
+                }
             });
-    
+
             newCard.querySelector('.reduzir-prod').addEventListener('click', (e) => {
                 let parentCard = e.target.closest('.product-card');
                 let contador = parentCard.querySelector('.contador-prod');
                 if (parseInt(contador.textContent) > 1) {
                     contador.textContent = parseInt(contador.textContent) - 1;
+                    updateTotalQuantity();
+                    updateCardCount();
                 }
             });
-    
+
             updateCardCount();
+            updateTotalQuantity();
         }
-    
+
         function getImagensTratamento(tratamento) {
             const basePath = "assets/img/produtos/";
             if (tratamento === "Aromaterapia") {
@@ -254,10 +251,11 @@
                 `${basePath}default1.jpeg`,
                 `${basePath}default2.jpeg`,
                 `${basePath}default3.jpeg`,
-                `${basePath}default4.jpeg`
+                `${basePath}default4.jpeg`,
+                `${basePath}default5.jpeg`
             ];
         }
-    
+
         function updateMainContent(option, parentCard) {
             // Remove active class from all main images
             parentCard.querySelectorAll(".main-images .main-img").forEach(img => {
@@ -265,11 +263,11 @@
             });
             // Add active class to the selected main image
             parentCard.querySelector(`#${option.dataset.target}`).classList.add("active");
-    
+
             // Update product details
             parentCard.querySelector("h3").textContent = option.dataset.title;
             parentCard.querySelector("p").textContent = option.dataset.description;
-    
+
             // Remove active class from all options
             parentCard.querySelectorAll(".img-options .option").forEach(opt => {
                 opt.classList.remove("active");
@@ -277,36 +275,52 @@
             // Add active class to the selected option
             option.classList.add("active");
         }
-    
+
+        function updateTotalQuantity() {
+            totalQuantity = 0;
+            document.querySelectorAll('.contador-prod').forEach(contador => {
+                totalQuantity += parseInt(contador.textContent);
+            });
+            return totalQuantity;
+        }
+
         function updateCardCount() {
             const cardCount = document.querySelectorAll('.product-card').length;
-            let avisoCarrinho = document.querySelectorAll('.aviso-carrinho');
+            let avisoCarrinho = document.querySelector('.aviso-carrinho');
+            let quantidadeProdDivs = document.querySelectorAll('.quantidade-prod');
+            let aumentarProdDiv = document.querySelectorAll('.aumentar-prod');
+            let addProdutoButton = document.getElementById('addProduto');
 
-            if (cardCount >= 5) {
-                document.getElementById('addProduto').disabled = true;
-                avisoCarrinho.forEach(aviso => {
-                    aviso.textContent = "Você atingiu o limite de produtos adicionados.";
-                });
+            if (updateTotalQuantity() >= 5) {
+                aumentarProdDiv.disabled = true;
+                avisoCarrinho.textContent = "Você atingiu o limite de produtos adicionados.";
+                avisoCarrinho.setAttribute("style", "color: red");
+                
             } else {
-                document.getElementById('addProduto').disabled = false;
-                avisoCarrinho.forEach(aviso => {
-                    aviso.textContent = `Você pode adicionar até 5 produtos. (${cardCount} de 5)`;
-                });
+                aumentarProdDiv.disabled = false;
+                avisoCarrinho.textContent = `Você pode adicionar até 5 produtos. (${updateTotalQuantity()} de 5)`; 
+                avisoCarrinho.removeAttribute("style", "color: red");
             }
-            console.log(`Número de cards: ${cardCount} de 5`);
+            console.log(`Número de produtos: ${updateTotalQuantity()} de 5`);
         }
 
         // Adiciona evento de clique ao botão de adicionar
         document.getElementById('addProduto').addEventListener('click', () => {
-            const count = document.querySelectorAll('.product-card').length;
-            if (count < 5) {
+            if (updateTotalQuantity() < 5) {
+                const count = document.querySelectorAll('.product-card').length;
                 createNewCard(`card${count + 1}`);
-            } else {
-                alert("Você só pode adicionar no máximo 5 produtos.");
+                updateCardCount();
             }
         });
-    </script>
+        
+        document.getElementById('finalizar-compra').addEventListener('click', () =>{
+            window.location.href = "perfil.html";
+        })
+   
+   </script>
+
     
+
 </body>
 
 </html>
