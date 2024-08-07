@@ -397,14 +397,15 @@ form h2 {
     flex-direction: column;
         
         h2{
-            font-size: 1.4em;
+            font-size: 1.3em;
             font-weight: 500;
             color: #4C6410;
+            margin-bottom: 20px;
         }
 
         p{
             font-size: .9em;
-            margin: 10px 0;
+            margin: 20px 0;
             span{
                 font-size: 1.1em;
                 font-weight: 700;
@@ -516,9 +517,28 @@ form h2 {
     background-color: #4C6410;
   }
 
+  .questionario #termos{
+    text-align: justify;
+  }
+
   #termos{
     margin: 15px 0;
-    font-size: .9em;
+    font-size: .8em;
+  }
+
+  .carregar-resposta{
+        border: 16px solid #f3f3f3; /* Light grey */
+        border-top: 10px solid #ADC172; /* Blue */
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin: 15px auto;
+        animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 
 /* Página de Carrinho */
@@ -629,8 +649,8 @@ form h2 {
 }
 
 .options-product .img-options .option {
-    width: 45px;
-    height: 45px;
+    width: 35px;
+    height: 35px;
     border-radius: 20%;
     background-size: cover;
     background-position: center;
@@ -724,7 +744,15 @@ form h2 {
     border-radius: 0 15px 15px 0;
 }
 
+.aumentar-prod.disable{
+    background-color: white;
+}
 
+.aviso-carrinho{
+    margin: 10px;
+    text-align: center;
+
+}
 
 /* Página de Indicações */
 

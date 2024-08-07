@@ -211,9 +211,16 @@ function carregarPergunta(){
 
     if(tratamentoSelecionado.length == contadorPerguntas){
         //Caso seja a ultima pergunta, ele executa a função mostrar Carrinho e encerra a função atual
+        let carregandoResp = document.getElementById("loading");
         btnAvancar.setAttribute("style", "display:none");
-        pergunta.innerText = "Avaliando respostas e montando o seu Kit"
-        return mostrarCarrinho();
+        pergunta.innerText = "Avaliando respostas e montando o seu Kit";
+        pergunta.style.fontSize = "1em";
+        carregandoResp.innerHTML = `
+            <div class="carregar-resposta"></div>
+        `
+        setTimeout(() => {
+            window.location.href = "carrinho.html";;
+        }, 5000);
     }
 
     // Exibe a pergunta referente ao contador de perguntas. O contador busca a posição da pergunta dentro da matriz principal (tratamento)[posição].informaçãoquedeseja
@@ -272,5 +279,5 @@ function carregarPergunta(){
 
 // Função para mostrar o kit de produtos ao final do questionário
 function mostrarCarrinho (){
-    window.location.href = "carrinho.html";
+    
 }

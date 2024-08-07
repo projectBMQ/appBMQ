@@ -43,8 +43,10 @@ h3{
 }
 #align-img{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding-bottom: 14px;
+    flex-wrap: wrap;
+    gap: 10px 20px;
 }
 main img{
     border-radius: 27px;
